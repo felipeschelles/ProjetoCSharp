@@ -36,5 +36,12 @@ namespace TelaInicial
             menuCliente.Show();
             Close();
         }
+
+        private void btnLoginGerente_Click(object sender, RoutedEventArgs e)
+        {
+            LoginGerente logGerente = new LoginGerente();
+            logGerente.Show();
+            Close();
+        }
     }
 }

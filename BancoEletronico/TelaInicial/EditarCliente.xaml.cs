@@ -23,5 +23,12 @@ namespace TelaInicial
         {
             InitializeComponent();
         }
+
+        private void btnVoltar_Click(object sender, RoutedEventArgs e)
+        {
+            LoginGerente logGerente = new LoginGerente();
+            logGerente.Show();
+            Close();
+        }        
     }
 }

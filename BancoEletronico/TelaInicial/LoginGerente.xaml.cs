@@ -23,5 +23,40 @@ namespace TelaInicial
         {
             InitializeComponent();
         }
+
+        private void btnCadastrarClientes_Click(object sender, RoutedEventArgs e)
+        {
+            CadastrarCliente cadCli = new CadastrarCliente();
+            cadCli.Show();
+            Close();
+        }
+
+        private void btnVoltar_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow menuGeral = new MainWindow();
+            menuGeral.Show();
+            Close();
+        }
+
+        private void btnListarClientes_Click(object sender, RoutedEventArgs e)
+        {
+            ListarClientes listClientes = new ListarClientes();
+            listClientes.Show();
+            Close();
+        }
+
+        private void btnEditarClientes_Click(object sender, RoutedEventArgs e)
+        {
+            EditarCliente editCliente = new EditarCliente();
+            editCliente.Show();
+            Close();
+        }
+
+        private void btnExcluirClientes_Click(object sender, RoutedEventArgs e)
+        {
+            ExcluirCliente exCliente = new ExcluirCliente();
+            exCliente.Show();
+            Close();
+        }
     }
 }

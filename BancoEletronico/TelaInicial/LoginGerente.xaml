@@ -8,11 +8,11 @@
         Title="LoginGerente" Height="480" Width="854">
     <Grid>
         <Label x:Name="lblMenuGerente" Content="Menu Gerente" HorizontalAlignment="Left" Margin="46,28,0,0" VerticalAlignment="Top" FontSize="28"/>
-        <Button x:Name="btnCadastrarClientes" Content="Cadastrar Cliente" HorizontalAlignment="Left" Margin="60,161,0,248" Width="98" Height="40"/>
-        <Button x:Name="btnListarClientes" Content="Listar Clientes" Margin="260,161,488,0" VerticalAlignment="Top" Height="40"/>
-        <Button x:Name="btnEditarClientes" Content="Editar Cliente" Margin="488,161,260,0" VerticalAlignment="Top" Width="98" Height="40"/>
-        <Button x:Name="btnExcluirClientes" Content="Excluir Cliente" Margin="688,161,60,0" VerticalAlignment="Top" Width="98" Height="40"/>
-        <Button x:Name="btnVoltar" Content="Voltar" HorizontalAlignment="Left" Margin="760,419,0,0" VerticalAlignment="Top" Width="76"/>
+        <Button x:Name="btnCadastrarClientes" Content="Cadastrar Cliente" HorizontalAlignment="Left" Margin="60,161,0,248" Width="98" Height="40" Click="btnCadastrarClientes_Click"/>
+        <Button x:Name="btnListarClientes" Content="Listar Clientes" Margin="260,161,488,0" VerticalAlignment="Top" Height="40" Click="btnListarClientes_Click"/>
+        <Button x:Name="btnEditarClientes" Content="Editar Cliente" Margin="488,161,260,0" VerticalAlignment="Top" Width="98" Height="40" Click="btnEditarClientes_Click"/>
+        <Button x:Name="btnExcluirClientes" Content="Excluir Cliente" Margin="688,161,60,0" VerticalAlignment="Top" Width="98" Height="40" Click="btnExcluirClientes_Click"/>
+        <Button x:Name="btnVoltar" Content="Voltar" HorizontalAlignment="Left" Margin="760,419,0,0" VerticalAlignment="Top" Width="76" Click="btnVoltar_Click"/>
         <Button x:Name="btnCadastrarContas" Content="Cadastrar Conta" HorizontalAlignment="Left" Margin="60,329,0,0" VerticalAlignment="Top" Width="98" Height="40"/>
         <Button x:Name="btnListarContas" Content="Listar Conta" HorizontalAlignment="Left" Margin="260,329,0,0" VerticalAlignment="Top" Width="98" Height="40"/>
         <Button x:Name="btnEditarContas" Content="Editar Conta" HorizontalAlignment="Left" Margin="488,329,0,0" VerticalAlignment="Top" Width="98" Height="40"/>
