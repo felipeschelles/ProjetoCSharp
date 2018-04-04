@@ -15,15 +15,14 @@ using System.Windows.Shapes;
 namespace TelaInicial
 {
     /// <summary>
-    /// Lógica interna para CadastrarCliente.xaml
+    /// Interaction logic for ExcluirCliente.xaml
     /// </summary>
-    public partial class CadastrarCliente : Window
+    public partial class ExcluirCliente : Window
     {
-        public CadastrarCliente()
+        public ExcluirCliente()
         {
             InitializeComponent();
         }
-
      
     }
 }

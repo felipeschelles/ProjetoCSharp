@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace TelaInicial
 {
     /// <summary>
-    /// Lógica interna para CadastrarCliente.xaml
+    /// Interaction logic for EditarCliente.xaml
     /// </summary>
-    public partial class CadastrarCliente : Window
+    public partial class EditarCliente : Window
     {
-        public CadastrarCliente()
+        public EditarCliente()
         {
             InitializeComponent();
         }
