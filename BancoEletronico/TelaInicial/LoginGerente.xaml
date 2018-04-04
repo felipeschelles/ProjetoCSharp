@@ -1,0 +1,18 @@
+﻿<Window x:Class="TelaInicial.LoginGerente"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TelaInicial"
+        mc:Ignorable="d"
+        Title="LoginGerente" Height="480" Width="854">
+    <Grid>
+        <Label x:Name="lblMenuGerente" Content="Menu Gerente" HorizontalAlignment="Left" Margin="46,28,0,0" VerticalAlignment="Top" FontSize="28"/>
+        <Button x:Name="btnCadastrarClientes" Content="Cadastrar Cliente" HorizontalAlignment="Left" Margin="60,215,0,195" Width="98" Height="40"/>
+        <Button x:Name="btnListarClientes" Content="Listar Clientes" Margin="260,215,488,0" VerticalAlignment="Top" Height="40"/>
+        <Button x:Name="btnEditarClientes" Content="Editar Cliente" Margin="488,215,260,0" VerticalAlignment="Top" Width="98" Height="40"/>
+        <Button x:Name="btnExcluirClientes" Content="Excluir Cliente" Margin="688,215,60,0" VerticalAlignment="Top" Width="98" Height="40"/>
+        <Button x:Name="btnVoltar" Content="Voltar" HorizontalAlignment="Left" Margin="760,419,0,0" VerticalAlignment="Top" Width="76"/>
+
+    </Grid>
+</Window>
