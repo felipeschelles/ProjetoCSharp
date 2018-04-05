@@ -56,6 +56,35 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Depositar.xaml.cs">
+      <DependentUpon>Depositar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Extrato.xaml.cs">
+      <DependentUpon>Extrato.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sacar.xaml.cs">
+      <DependentUpon>Sacar.xaml</DependentUpon>
+    </Compile>
+    <Page Include="CadastrarConta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Depositar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditarConta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExcluirConta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Extrato.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ListarClientes.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -69,6 +98,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="CadastrarCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ListarContas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -88,6 +121,15 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="CadastrarConta.xaml.cs">
+      <DependentUpon>CadastrarConta.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditarConta.xaml.cs">
+      <DependentUpon>EditarConta.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExcluirConta.xaml.cs">
+      <DependentUpon>ExcluirConta.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ListarClientes.xaml.cs">
       <DependentUpon>ListarClientes.xaml</DependentUpon>
     </Compile>
@@ -100,6 +142,9 @@
     <Compile Include="CadastrarCliente.xaml.cs">
       <DependentUpon>CadastrarCliente.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ListarContas.xaml.cs">
+      <DependentUpon>ListarContas.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LoginCliente.xaml.cs">
       <DependentUpon>LoginCliente.xaml</DependentUpon>
     </Compile>
@@ -110,6 +155,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Sacar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

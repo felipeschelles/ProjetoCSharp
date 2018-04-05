@@ -1,0 +1,16 @@
+﻿<Window x:Class="TelaInicial.ExcluirConta"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TelaInicial"
+        mc:Ignorable="d"
+        Title="ExcluirConta" Height="480" Width="825">
+    <Grid>
+        <Label x:Name="lblExcluirConta" Content="Excluir Conta" HorizontalAlignment="Left" Margin="39,10,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lvlExcluirConta" Content="Número da Conta:" HorizontalAlignment="Left" Margin="39,58,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtExcluitConta" HorizontalAlignment="Left" Height="23" Margin="183,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnExcluir" Content="Excluir" HorizontalAlignment="Left" Margin="344,62,0,0" VerticalAlignment="Top" Width="75"/>
+
+    </Grid>
+</Window>

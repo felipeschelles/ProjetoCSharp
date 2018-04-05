@@ -13,10 +13,10 @@
         <Button x:Name="btnEditarClientes" Content="Editar Cliente" Margin="488,161,260,0" VerticalAlignment="Top" Width="98" Height="40" Click="btnEditarClientes_Click"/>
         <Button x:Name="btnExcluirClientes" Content="Excluir Cliente" Margin="688,161,60,0" VerticalAlignment="Top" Width="98" Height="40" Click="btnExcluirClientes_Click"/>
         <Button x:Name="btnVoltar" Content="Voltar" HorizontalAlignment="Left" Margin="760,419,0,0" VerticalAlignment="Top" Width="76" Click="btnVoltar_Click"/>
-        <Button x:Name="btnCadastrarContas" Content="Cadastrar Conta" HorizontalAlignment="Left" Margin="60,329,0,0" VerticalAlignment="Top" Width="98" Height="40"/>
-        <Button x:Name="btnListarContas" Content="Listar Conta" HorizontalAlignment="Left" Margin="260,329,0,0" VerticalAlignment="Top" Width="98" Height="40"/>
-        <Button x:Name="btnEditarContas" Content="Editar Conta" HorizontalAlignment="Left" Margin="488,329,0,0" VerticalAlignment="Top" Width="98" Height="40"/>
-        <Button x:Name="btnExcluirContas" Content="Excluir Conta" HorizontalAlignment="Left" Margin="688,329,0,0" VerticalAlignment="Top" Width="98" Height="40"/>
+        <Button x:Name="btnCadastrarContas" Content="Cadastrar Conta" HorizontalAlignment="Left" Margin="70,329,0,0" VerticalAlignment="Top" Width="98" Height="40" Click="btnCadastrarContas_Click"/>
+        <Button x:Name="btnListarContas" Content="Listar Conta" HorizontalAlignment="Left" Margin="260,329,0,0" VerticalAlignment="Top" Width="98" Height="40" Click="btnListarContas_Click"/>
+        <Button x:Name="btnEditarContas" Content="Editar Conta" HorizontalAlignment="Left" Margin="488,329,0,0" VerticalAlignment="Top" Width="98" Height="40" Click="btnEditarContas_Click"/>
+        <Button x:Name="btnExcluirContas" Content="Excluir Conta" HorizontalAlignment="Left" Margin="688,329,0,0" VerticalAlignment="Top" Width="98" Height="40" Click="btnExcluirContas_Click"/>
         <Label x:Name="lblOpcoesCliente" Content="Opções Cliente" HorizontalAlignment="Left" Margin="46,104,0,0" VerticalAlignment="Top" FontSize="18"/>
         <Label x:Name="lblOpcoesConta" Content="Opções Conta" HorizontalAlignment="Left" Margin="46,264,0,0" VerticalAlignment="Top" FontSize="18"/>
 

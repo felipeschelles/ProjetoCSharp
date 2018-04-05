@@ -1,0 +1,11 @@
+﻿<Window x:Class="TelaInicial.EditarConta"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="EditarConta" Height="480" Width="825">
+    <Grid>
+        <Label x:Name="lblEditarConta" Content="Editar Conta" HorizontalAlignment="Left" Margin="44,36,0,0" VerticalAlignment="Top" IsEnabled="False" FontSize="28"/>
+        <Label x:Name="lblEditarConta1" Content="Tipo de conta:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="44,108,0,0"/>
+        <ComboBox x:Name="comboBoxEditarTipoConta" HorizontalAlignment="Left" Margin="156,112,0,0" VerticalAlignment="Top" Width="120"/>
+
+    </Grid>
+</Window>

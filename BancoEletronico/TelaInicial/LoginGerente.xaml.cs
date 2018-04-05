@@ -19,6 +19,8 @@ namespace TelaInicial
     /// </summary>
     public partial class LoginGerente : Window
     {
+        
+
         public LoginGerente()
         {
             InitializeComponent();
@@ -58,5 +60,37 @@ namespace TelaInicial
             exCliente.Show();
             Close();
         }
+
+
+        private void btnListarContas_Click(object sender, RoutedEventArgs e)
+        {
+            ListarContas listConta = new ListarContas();
+            listConta.Show();
+            Close();
+            
+
+        }
+
+        private void btnEditarContas_Click(object sender, RoutedEventArgs e)
+        {
+            EditarConta listEditarConta = new EditarConta();
+            listEditarConta.Show();
+            Close();
+        }
+
+        private void btnExcluirContas_Click(object sender, RoutedEventArgs e)
+        {
+            ExcluirConta listExcluirConta = new ExcluirConta();
+            listExcluirConta.Show();
+            Close();
+        }
+
+        private void btnCadastrarContas_Click(object sender, RoutedEventArgs e)
+        {
+            CadastrarConta cadConta = new CadastrarConta();
+            cadConta.Show();
+            Close();
+        }
+
     }
 }
