@@ -1,4 +1,4 @@
-﻿using System.DateTime;
+﻿using System;
 namespace Models
 {
     public class Cliente
@@ -7,7 +7,7 @@ namespace Models
 
         public string Nome { get; set; }
 
-        public Date DtAniver { get; set; }
+        public DateTime DtAniver { get; set; }
 
         public int Cpf { get; set; }
 
