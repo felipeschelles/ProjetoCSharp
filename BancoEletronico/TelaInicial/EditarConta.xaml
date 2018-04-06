@@ -6,6 +6,7 @@
         <Label x:Name="lblEditarConta" Content="Editar Conta" HorizontalAlignment="Left" Margin="44,36,0,0" VerticalAlignment="Top" IsEnabled="False" FontSize="28"/>
         <Label x:Name="lblEditarConta1" Content="Tipo de conta:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="44,108,0,0"/>
         <ComboBox x:Name="comboBoxEditarTipoConta" HorizontalAlignment="Left" Margin="156,112,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnVoltarEditarConta" Content="Voltar" HorizontalAlignment="Left" Margin="733,420,0,0" VerticalAlignment="Top" Width="75" Click="btnVoltarEditarConta_Click"/>
 
     </Grid>
 </Window>

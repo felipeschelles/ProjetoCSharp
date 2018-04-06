@@ -17,11 +17,18 @@ namespace TelaInicial
     /// <summary>
     /// Interaction logic for ListarConta.xaml
     /// </summary>
-    public partial class ListarConta : Window
+    public partial class ListarContas : Window
     {
-        public ListarConta()
+        public ListarContas()
         {
             InitializeComponent();
+        }
+
+        private void btnVoltarListarContas_Click(object sender, RoutedEventArgs e)
+        {
+            LoginGerente logGerente = new LoginGerente();
+            logGerente.Show();
+            Close();
         }
     }
 }

@@ -8,10 +8,10 @@
         <TextBox x:Name="txtCadastrarConta" HorizontalAlignment="Left" Height="23" Margin="259,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="lblTipoConta" Content="Tipo Conta:" HorizontalAlignment="Left" Margin="69,168,0,0" VerticalAlignment="Top"/>
         <ComboBox HorizontalAlignment="Left" Margin="259,172,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Voltar" HorizontalAlignment="Left" Margin="732,418,0,0" VerticalAlignment="Top" Width="75"/>
         <Label x:Name="label" Content="Id Cliente:" HorizontalAlignment="Left" Margin="69,227,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtBuscarIdCliente" HorizontalAlignment="Left" Height="23" Margin="259,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="btnBuscar" Content="Buscar" HorizontalAlignment="Left" Margin="448,230,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnVoltarCadastrarConta" Content="Voltar" HorizontalAlignment="Left" Margin="733,421,0,0" VerticalAlignment="Top" Width="75" Click="btnVoltarCadastrarConta_Click"/>
 
     </Grid>
 </Window>
