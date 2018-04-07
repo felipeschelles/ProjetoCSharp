@@ -1,4 +1,4 @@
-﻿namespace Modelos
+﻿namespace Models
 {
     public class Endereco
     {

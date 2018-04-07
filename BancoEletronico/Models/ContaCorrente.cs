@@ -1,6 +1,6 @@
 ﻿namespace Models
 {
-    class ContaCorrente : Conta
+    public class ContaCorrente : Conta
     {
     }
 }

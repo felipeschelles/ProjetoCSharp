@@ -2,10 +2,13 @@
 {
     public abstract class Conta
     {
-        int ContaID { get; set; }
-        int Numero { get; set; }
-        int ClienteID { get; set; }
-        float Saldo { get; set; }
+        public int ContaID { get; set; }
+
+        public int Numero { get; set; }
+
+        public int ClienteID { get; set; }
+
+        public float Saldo { get; set; }
 
     }
 }
