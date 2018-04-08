@@ -7,9 +7,10 @@ namespace Models
 
         public string Nome { get; set; }
 
-        public DateTime DtAniver { get; set; }
+        //public DateTime DtAniver { get; set; }
+        public string DtAniver { get; set; }
 
-        public int Cpf { get; set; }
+        public string Cpf { get; set; }
 
         public int EnderecoID { get; set; }
 
