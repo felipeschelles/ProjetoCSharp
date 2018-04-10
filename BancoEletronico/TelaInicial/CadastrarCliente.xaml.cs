@@ -52,15 +52,12 @@ namespace TelaInicial
             // ... Endereco
             Endereco end = new Endereco();
 
-            Console.Write("Digite o nome da rua: ");
-            end.Rua = Console.ReadLine();
+            
+            end.Rua = txtRua.Text;
 
-            Console.WriteLine();
+            end.Numero = int.Parse(txtNumero.Text);
 
-            Console.Write("Digite o numero: ");
-            end.Numero = int.Parse(Console.ReadLine());
-
-            Console.WriteLine();
+            
 
             EnderecosController ec = new EnderecosController();
             ec.SalvarEndereco(end);

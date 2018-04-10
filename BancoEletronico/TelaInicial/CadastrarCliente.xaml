@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TelaInicial"
         mc:Ignorable="d"
-        Title="CadastrarCliente" Height="481" Width="854">
+        Title="CadastrarCliente" Height="480" Width="854">
     <Grid>
         <Label x:Name="lblCadastrarCliente" Content="Cadastrar Cliente" HorizontalAlignment="Left" Margin="46,28,0,0" VerticalAlignment="Top" FontSize="28"/>
         <Label x:Name="lblNome" Content="Nome:" HorizontalAlignment="Left" Margin="30,100,0,0" VerticalAlignment="Top"/>

@@ -189,7 +189,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Controllers\Controllers.csproj">
-      <Project>{9d9aeb04-a80c-4123-afb6-f19f32a14ec9}</Project>
+      <Project>{eb2a685d-e226-489d-b300-ab77982801e7}</Project>
       <Name>Controllers</Name>
     </ProjectReference>
     <ProjectReference Include="..\Models\Models.csproj">
