@@ -30,5 +30,17 @@ namespace TelaInicial
             menuGeral.Show();
             Close();
         }
+
+        private void btnSacar_Click(object sender, RoutedEventArgs e)
+        {
+            Sacar sacar = new Sacar();
+            sacar.Show();
+        }
+
+        private void btnDepositar_Click(object sender, RoutedEventArgs e)
+        {
+            Depositar depositar = new Depositar();
+            depositar.Show();
+        }
     }
 }

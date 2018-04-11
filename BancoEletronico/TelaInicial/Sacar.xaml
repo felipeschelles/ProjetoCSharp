@@ -5,8 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TelaInicial"
         mc:Ignorable="d"
-        Title="Sacar" Height="480" Width="825">
+        Title="Sacar" Height="280" Width="400">
     <Grid>
-        
+        <Label x:Name="lblSacar" Content="Sacar" Margin="167,28,168,0" VerticalAlignment="Top" FontSize="20"/>
+        <TextBox x:Name="txtVlrSacar" HorizontalAlignment="Left" Height="23" Margin="95,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" SelectionOpacity="-4"/>
+        <Label x:Name="lblVlrSacar" Content="Valor:" HorizontalAlignment="Left" Margin="40,169,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnFechar" Content="Fechar" HorizontalAlignment="Left" Margin="307,219,0,0" VerticalAlignment="Top" Width="75" Click="btnFechar_Click"/>
+        <Button x:Name="btnSacar" Content="Sacar" Margin="240,174,77,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>

@@ -23,5 +23,10 @@ namespace TelaInicial
         {
             InitializeComponent();
         }
+
+        private void btnFechar_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }
