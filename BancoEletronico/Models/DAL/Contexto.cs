@@ -11,7 +11,8 @@ namespace Models.DAL
     {
         public Contexto() : base("stringConn")
         {
-
+            Database.SetInitializer( new DropCreateDatabaseIfModelChanges<Contexto>());
+            
         }
 
         public DbSet<Cliente> Clientes { get; set; }
