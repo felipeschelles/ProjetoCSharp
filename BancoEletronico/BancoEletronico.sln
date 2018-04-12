@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27428.1
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelaInicial", "TelaInicial\TelaInicial.csproj", "{98A8ED5E-A068-40AB-B2DF-2B69B50A4225}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{037B5E5F-A9EE-4856-8395-BAC175249269}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controllers", "Controllers\Controllers.csproj", "{EB2A685D-E226-489D-B300-AB77982801E7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{F3312601-46CA-4D66-81F4-A092791F3822}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

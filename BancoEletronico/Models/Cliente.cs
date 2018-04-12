@@ -14,5 +14,11 @@ namespace Models
 
         public int EnderecoID { get; set; }
 
+        public Endereco _Endereco { get; set; }
+
+        public int ContaID { get; set; }
+
+        public Conta _Conta { set; get; }
+
     }
 }

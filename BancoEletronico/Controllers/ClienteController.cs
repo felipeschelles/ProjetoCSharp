@@ -1,26 +1,27 @@
 ﻿using Models;
 using System.Collections.Generic;
 using System.Linq;
+using Models.DAL;
 
 namespace Controllers
 {
     public class ClienteController
     {
-        static List<Cliente> MeusClientes = new List<Cliente>();
-        static int ultimoID = 0;
+        
+       
 
         public void SalvarCliente(Cliente cliente)
         {
-            int id = ultimoID + 1;
-            ultimoID = id;
-
-            cliente.ClienteID = id;
-            MeusClientes.Add(cliente);
+            Contexto ctx = new Contexto();
+            ctx.Clientes.Add(cliente);
+            ctx.SaveChanges();
         }
 
         public Cliente PesquisarPorNome(string nome)
         {
-            var c = from x in MeusClientes
+            Contexto ctx = new Contexto();
+
+            var c = from x in ctx.Clientes
                     where x.Nome.ToLower().Contains(nome.Trim().ToLower())
                     select x;
 
@@ -32,27 +33,28 @@ namespace Controllers
 
         public Cliente PesquisarPorID(int idCliente)
         {
-            var c = from x in MeusClientes
-                    where x.ClienteID.Equals(idCliente)
-                    select x;
+            Contexto ctx = new Contexto();
 
-            if (c != null)
-                return c.FirstOrDefault();
-            else
-                return null;
+            return ctx.Clientes.Find(idCliente);
+
+       
         }
 
         public void ExcluirCliente(int idCliente)
         {
-            Cliente cli = PesquisarPorID(idCliente);
+            Contexto ctx = new Contexto();
+            Cliente c = ctx.Clientes.Find(idCliente);
 
-            if(cli != null)
-                MeusClientes.Remove(cli);
+            ctx.Entry(c).State = System.Data.Entity.EntityState.Deleted;
+
+            ctx.SaveChanges();
         }
 
         public List<Cliente> ListarClientes()
         {
-            return MeusClientes;
+            Contexto ctx = new Contexto();
+
+            return ctx.Clientes.ToList();
         }
 
         public void EditarCliente(int idClienteEditar, Cliente clienteEditado)
