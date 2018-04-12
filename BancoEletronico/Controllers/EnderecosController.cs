@@ -6,36 +6,23 @@ namespace Controllers
 {
     public class EnderecosController
     {
-        static List<Endereco> ListEndereco = new List<Endereco>();
-        static int ultimoID = 0;
+
 
         public void SalvarEndereco(Endereco end)
         {
-            int id = ultimoID + 1;
-            ultimoID = id;
-
-            end.EnderecoID = id;
-            ListEndereco.Add(end);
-
+            ContextoSingleton.Instancia.Enderecos.Add(end);
+            ContextoSingleton.Instancia.SaveChanges();
         }
 
-        public Endereco PesquisarPorId(int id)
+        public Endereco PesquisarPorId(int idEnd)
         {
-            var e = from x in ListEndereco
-                    where x.EnderecoID.Equals(id)
-                    select x;
-            if (e != null)
-            {
-                return e.FirstOrDefault();
-            }
-            else
-                return null;
+            return ContextoSingleton.Instancia.Enderecos.Find(idEnd);
 
         }
 
         public List<Endereco> listarEnderecos()
         {
-            return ListEndereco;
+            return ContextoSingleton.Instancia.Enderecos.Tolist;
         }
 
 

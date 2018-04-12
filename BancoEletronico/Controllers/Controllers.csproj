@@ -53,6 +53,7 @@
     <Compile Include="ClienteController.cs" />
     <Compile Include="ContaCController.cs" />
     <Compile Include="ContaPController.cs" />
+    <Compile Include="ContextoSingleton.cs" />
     <Compile Include="EnderecosController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

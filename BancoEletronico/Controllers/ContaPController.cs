@@ -9,49 +9,51 @@ namespace Controllers
 {
     class ContaPController
     {
-        static List<ContaPoupanca> MinhasContasPoupanca = new List<ContaPoupanca>();
-        static int ultimoID = 0;
+
 
         public void SalvarContaPoupanca(ContaPoupanca conta)
         {
-            int id = ultimoID + 1;
-            ultimoID = id;
-
-            conta.ContaID = id;
-            MinhasContasPoupanca.Add(conta);
+            ContextoSingleton.Instancia.ContaPoupanca.Add(conta);
+            ContextoSingleton.Instancia.SaveChanges();
         }
 
         public ContaPoupanca PesquisarContaPorID(int idConta)
         {
-            var c = from x in MinhasContasPoupanca
-                    where x.ClienteID.Equals(idConta)
-                    select x;
-
-            if (c != null)
-                return c.FirstOrDefault();
-            else
-                return null;
+            return ContextoSingleton.Instancia.ContaPoupanca.Find(idConta);
         }
 
         public void ExcluirConta(int idConta)
         {
-            ContaPoupanca cont = PesquisarContaPorID(idConta);
+            ContaPoupanca c = ContextoSingleton.Instancia.ContaCorrente.Find(idConta);
 
-            if (cont != null)
-                MinhasContasPoupanca.Remove(cont);
+            ContextoSingleton.Instancia.Entry(c).State =
+                System.Data.Entity.EntityState.Deleted;
+
+            ContextoSingleton.Instancia.SaveChanges();
         }
 
         public List<ContaPoupanca> ListarContas()
         {
-            return MinhasContasPoupanca;
+            return ContextoSingleton.Instancia.ContasPoupanca.ToList();
         }
 
-        public void EditarCliente(int idContaEditar, ContaPoupanca contaEditada)
+        public void Movimento(int idContaEditar, ContaPoupanca contaEditada)
         {
             ContaPoupanca contaEditar = PesquisarContaPorID(idContaEditar);
 
-            contaEditar.Saldo = contaEditada.Saldo;
-           
+            if (contaEditar != null)
+            {
+
+                contaEditar.Saldo = contaEditada.Saldo;
+
+                ContextoSingleton
+                   .Instancia
+                   .Entry(contaEditar).State =
+                   System.Data.Entity.EntityState.Modified;
+
+                ContextoSingleton.Instancia.SaveChanges();
+
+            }
         }
     }
 }

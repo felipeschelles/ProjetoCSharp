@@ -8,6 +8,8 @@
 
         public int ClienteID { get; set; }
 
+        public Cliente _Cliente { get; set; }
+
         public float Saldo { get; set; }
 
     }
