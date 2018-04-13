@@ -22,7 +22,7 @@ namespace Controllers
 
         public List<Endereco> listarEnderecos()
         {
-            return ContextoSingleton.Instancia.Enderecos.Tolist;
+            return ContextoSingleton.Instancia.Enderecos.ToList();
         }
 
 

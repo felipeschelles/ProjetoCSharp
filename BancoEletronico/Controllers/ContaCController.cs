@@ -12,18 +12,18 @@ namespace Controllers
 
         public void SalvarContaCorrente(ContaCorrente conta)
         {
-            ContextoSingleton.Instancia.ContaCorrente.Add(conta);
+            ContextoSingleton.Instancia.ContasCorrente.Add(conta);
             ContextoSingleton.Instancia.SaveChanges();
         }
 
         public ContaCorrente PesquisarContaPorID(int idConta)
         {
-            return ContextoSingleton.Instancia.ContaCorrente.Find(idConta);
+            return ContextoSingleton.Instancia.ContasCorrente.Find(idConta);
         }
 
         public void ExcluirConta(int idConta)
         {
-            ContaCorrente c = ContextoSingleton.Instancia.ContaCorrente.Find(idConta);
+            ContaCorrente c = ContextoSingleton.Instancia.ContasCorrente.Find(idConta);
 
             ContextoSingleton.Instancia.Entry(c).State =
                 System.Data.Entity.EntityState.Deleted;
@@ -31,12 +31,12 @@ namespace Controllers
             ContextoSingleton.Instancia.SaveChanges();
         }
 
-        public List<ContaPoupanca> ListarContas()
+        public List<ContaCorrente> ListarContas()
         {
             return ContextoSingleton.Instancia.ContasCorrente.ToList();
         }
 
-        public void Movimento(int idContaEditar, ContaPoupanca contaEditada)
+        public void Movimento(int idContaEditar, ContaCorrente contaEditada)
         {
             ContaCorrente contaEditar = PesquisarContaPorID(idContaEditar);
 

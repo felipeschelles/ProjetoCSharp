@@ -13,18 +13,18 @@ namespace Controllers
 
         public void SalvarContaPoupanca(ContaPoupanca conta)
         {
-            ContextoSingleton.Instancia.ContaPoupanca.Add(conta);
+            ContextoSingleton.Instancia.ContasPoupanca.Add(conta);
             ContextoSingleton.Instancia.SaveChanges();
         }
 
         public ContaPoupanca PesquisarContaPorID(int idConta)
         {
-            return ContextoSingleton.Instancia.ContaPoupanca.Find(idConta);
+            return ContextoSingleton.Instancia.ContasPoupanca.Find(idConta);
         }
 
         public void ExcluirConta(int idConta)
         {
-            ContaPoupanca c = ContextoSingleton.Instancia.ContaCorrente.Find(idConta);
+            ContaPoupanca c = ContextoSingleton.Instancia.ContasPoupanca.Find(idConta);
 
             ContextoSingleton.Instancia.Entry(c).State =
                 System.Data.Entity.EntityState.Deleted;

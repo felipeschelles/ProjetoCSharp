@@ -30,5 +30,11 @@ namespace TelaInicial
             logGerente.Show();
             Close();
         }
+
+        private void dataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Controllers.ClienteController cc = new Controllers.ClienteController();
+            cc.ListarClientes();
+        }
     }
 }

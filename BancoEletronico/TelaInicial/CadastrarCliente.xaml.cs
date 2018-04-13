@@ -44,6 +44,8 @@ namespace TelaInicial
 
             c.EnderecoID = end.EnderecoID;
 
+            ClienteController cc = new ClienteController();
+            cc.SalvarCliente(c);
             MessageBox.Show("Cliente cadastrado com sucesso.");
         }
 
