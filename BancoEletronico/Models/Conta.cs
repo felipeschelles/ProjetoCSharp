@@ -2,7 +2,7 @@
 {
     public abstract class Conta
     {
-        public int ContaID { get; set; }
+
 
         public int Numero { get; set; }
 
