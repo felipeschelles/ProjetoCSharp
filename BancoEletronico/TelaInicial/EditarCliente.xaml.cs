@@ -50,7 +50,7 @@ namespace TelaInicial
             
         }
 
-        private void btnVerifica_Click(object sender, RoutedEventArgs e)
+        private void btnVerificar_Click(object sender, RoutedEventArgs e)
         {
             ClienteController cc = new ClienteController();
             if (cc.PesquisarPorID(int.Parse(txtID.Text)) != null)
