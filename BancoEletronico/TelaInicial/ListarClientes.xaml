@@ -9,7 +9,10 @@
     <Grid>
         <Label x:Name="lblListarCliente" Content="Listar Clientes" HorizontalAlignment="Left" Margin="46,28,0,0" VerticalAlignment="Top" FontSize="28"/>
         <Button Name="btnVoltar" Content="Voltar" HorizontalAlignment="Left" Margin="761,418,0,0" VerticalAlignment="Top" Width="75" Click="btnVoltar_Click"/>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="46,109,0,0" VerticalAlignment="Top" Height="266" Width="725" SelectionChanged="dataGrid_SelectionChanged"/>
+        <DataGrid x:Name="dtgListar" HorizontalAlignment="Left" Height="251" Margin="46,118,0,0" VerticalAlignment="Top" Width="745" >
+            
+        </DataGrid>
+        <Button x:Name="btnListar" Content="Listar" HorizontalAlignment="Left" Margin="647,418,0,11" Width="75" Click="btnListar_Click"/>
 
     </Grid>
 </Window>

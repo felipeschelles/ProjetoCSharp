@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Models;
+using Controllers;
 
 namespace TelaInicial
 {
@@ -29,6 +31,39 @@ namespace TelaInicial
             LoginGerente logGerente = new LoginGerente();
             logGerente.Show();
             Close();
-        }        
+        }
+
+        private void btnEditar_Click(object sender, RoutedEventArgs e)
+        {
+
+   
+                ClienteController cc = new ClienteController();
+
+                Cliente c = new Cliente();
+                c.Nome = txtNome.Text;
+                c.DtAniver = txtDtNascimento.Text;
+                c.Cpf = txtCPF.Text;
+
+                cc.EditarCliente(int.Parse(txtID.Text),c);
+                MessageBox.Show("Cliente editado com sucesso.");
+           
+            
+        }
+
+        private void btnVerifica_Click(object sender, RoutedEventArgs e)
+        {
+            ClienteController cc = new ClienteController();
+            if (cc.PesquisarPorID(int.Parse(txtID.Text)) != null)
+            {
+                txtNome.IsEnabled = true;
+                txtCPF.IsEnabled = true;
+                txtDtNascimento.IsEnabled = true;
+                MessageBox.Show("Cliente encontrado.");
+                btnEditar.IsEnabled = true;
+            }
+            else{
+                MessageBox.Show("Cliente não encontrado.");
+            }
+        }
     }
 }

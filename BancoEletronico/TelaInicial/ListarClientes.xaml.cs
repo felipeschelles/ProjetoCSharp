@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,10 +32,14 @@ namespace TelaInicial
             Close();
         }
 
-        private void dataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        
+
+        private void btnListar_Click(object sender, RoutedEventArgs e)
         {
             Controllers.ClienteController cc = new Controllers.ClienteController();
-            cc.ListarClientes();
+           
+            dtgListar.DataContext = cc.ListarClientes();
+           
         }
     }
 }

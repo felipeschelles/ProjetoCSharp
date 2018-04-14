@@ -57,6 +57,7 @@ namespace Controllers
             {
                 clienteEditar.Nome = clienteEditado.Nome;
                 clienteEditar.Cpf = clienteEditado.Cpf;
+                clienteEditar.DtAniver = clienteEditado.DtAniver;
 
                 ContextoSingleton
                     .Instancia

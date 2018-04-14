@@ -8,18 +8,17 @@
         Title="EditarCliente" Height="480" Width="854">
     <Grid>
         <Label x:Name="lblEditarCliente" Content="Editar Cliente" HorizontalAlignment="Left" Margin="46,28,0,0" VerticalAlignment="Top" FontSize="28"/>
-        <Label x:Name="lblNome" Content="Nome:" HorizontalAlignment="Left" Margin="30,100,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblDtNascimento" Content="Data de nascimento:" HorizontalAlignment="Left" Margin="30,155,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblCPF" Content="CPF:" HorizontalAlignment="Left" Margin="30,210,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblEndereco" Content="Endereço" HorizontalAlignment="Left" Margin="30,265,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblRua" Content="Nome da Rua:" HorizontalAlignment="Left" Margin="30,320,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblNumero" Content="Numero:" HorizontalAlignment="Left" Margin="30,375,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtNome" HorizontalAlignment="Left" Height="23" Margin="170,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtDtNascimento" HorizontalAlignment="Left" Height="23" Margin="170,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtCPF" HorizontalAlignment="Left" Height="23" Margin="170,213,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtRua" HorizontalAlignment="Left" Height="23" Margin="170,323,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtNumero" HorizontalAlignment="Left" Height="23" Margin="170,378,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lblNome" Content="Nome:" HorizontalAlignment="Left" Margin="34,162,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblDtNascimento" Content="Data de nascimento:" HorizontalAlignment="Left" Margin="34,216,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblCPF" Content="CPF:" HorizontalAlignment="Left" Margin="34,272,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtNome" HorizontalAlignment="Left" Height="22" Margin="174,162,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <TextBox x:Name="txtDtNascimento" HorizontalAlignment="Left" Height="24" Margin="174,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <TextBox x:Name="txtCPF" HorizontalAlignment="Left" Height="24" Margin="174,274,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
         <Button x:Name="btnVoltar" Content="voltar" HorizontalAlignment="Left" Margin="761,418,0,0" VerticalAlignment="Top" Width="75" Click="btnVoltar_Click"/>
+        <Button x:Name="btnEditar" Content="Editar" Margin="652,418,120,0" VerticalAlignment="Top" Click="btnEditar_Click" IsEnabled="False"/>
+        <Label x:Name="lblID" Content="ID do cliente" HorizontalAlignment="Left" Margin="34,104,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtID" HorizontalAlignment="Left" Height="23" Margin="174,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnVerifica" Content="Verificar" HorizontalAlignment="Left" Margin="350,110,0,0" VerticalAlignment="Top" Width="74" Click="btnVerifica_Click"/>
 
     </Grid>
 </Window>
