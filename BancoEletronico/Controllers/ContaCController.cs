@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Controllers
 {
-    class ContaCController
+    public class ContaCController
     {
 
         public void SalvarContaCorrente(ContaCorrente conta)

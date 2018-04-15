@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Controllers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,6 +30,22 @@ namespace TelaInicial
             LoginGerente logGerente = new LoginGerente();
             logGerente.Show();
             Close();
+        }
+
+        private void btnVerificarConta_Click(object sender, RoutedEventArgs e)
+        {
+            ContaCController co = new ContaCController();
+            if (co.PesquisarContaPorID(int.Parse(txtExcluirConta.Text)) != null)
+            {
+
+                MessageBox.Show("Cliente encontrado.");
+                btnExcluir.IsEnabled = true;
+            }
+            else
+            {
+                MessageBox.Show("Cliente não encontrado.");
+                btnExcluir.IsEnabled = false;
+            }
         }
     }
 }
