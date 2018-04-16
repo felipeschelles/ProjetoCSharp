@@ -24,17 +24,24 @@ namespace TelaInicial
     {
 
         List<Cliente> ClienteLista = new List<Cliente>();
+        List<Endereco> Enderecos = new List<Endereco>();
         int CellValue;
 
         public ListarClientes()
         {
             InitializeComponent();
             Controllers.ClienteController cc = new Controllers.ClienteController();
+            Controllers.EnderecosController end = new Controllers.EnderecosController();
+            Enderecos = end.listarEnderecos();
             ClienteLista = cc.ListarClientes();
 
             foreach (var x in ClienteLista)
             {
                 dtgListar.Items.Add(x);
+            }
+            foreach (var y in Enderecos)
+            {
+                dtgListar.Items.Add(y);
             }
         }
 
@@ -47,13 +54,7 @@ namespace TelaInicial
 
         
 
-        private void btnListar_Click(object sender, RoutedEventArgs e)
-        {
-            Controllers.ClienteController cc = new Controllers.ClienteController();
-           
-            dtgListar.DataContext = cc.ListarClientes();
-           
-        }
+       
 
         private void DtGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
