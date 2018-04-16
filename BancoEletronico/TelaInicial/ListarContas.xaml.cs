@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Models;
+using Controllers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +21,21 @@ namespace TelaInicial
     /// </summary>
     public partial class ListarContas : Window
     {
+        List<ContaCorrente> ContaLista = new List<ContaCorrente>();
+        int ContaValue;
+
         public ListarContas()
         {
             InitializeComponent();
+            
+            Controllers.ContaCController co = new Controllers.ContaCController();
+
+            ContaLista = co.ListarContas();
+
+            foreach (var x in ContaLista)
+            {
+                dtgListarContas.Items.Add(x);
+            }
         }
 
         private void btnVoltarListarContas_Click(object sender, RoutedEventArgs e)
@@ -29,6 +43,11 @@ namespace TelaInicial
             LoginGerente logGerente = new LoginGerente();
             logGerente.Show();
             Close();
+        }
+
+        private void dataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ContaValue = int.Parse(dtgListarContas.SelectedValue.ToString());
         }
     }
 }
