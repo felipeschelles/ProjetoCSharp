@@ -1,4 +1,5 @@
 ﻿using System;
+using Models;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -19,10 +20,22 @@ namespace TelaInicial
     /// Lógica interna para ListarClientes.xaml
     /// </summary>
     public partial class ListarClientes : Window
+        
     {
+
+        List<Cliente> ClienteLista = new List<Cliente>();
+        int CellValue;
+
         public ListarClientes()
         {
             InitializeComponent();
+            Controllers.ClienteController cc = new Controllers.ClienteController();
+            ClienteLista = cc.ListarClientes();
+
+            foreach (var x in ClienteLista)
+            {
+                dtgListar.Items.Add(x);
+            }
         }
 
         private void btnVoltar_Click(object sender, RoutedEventArgs e)
@@ -40,6 +53,11 @@ namespace TelaInicial
            
             dtgListar.DataContext = cc.ListarClientes();
            
+        }
+
+        private void DtGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            CellValue = int.Parse(dtgListar.SelectedValue.ToString());
         }
     }
 }

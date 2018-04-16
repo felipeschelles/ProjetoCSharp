@@ -29,8 +29,8 @@ namespace TelaInicial
             InitializeComponent();
             
            // this.comboBoxEditarTipoConta.Dro = 280;
-            this.comboBoxEditarTipoConta.Items.Add("1 - Conta Corrente",
-                        "2 - Conta Poupança");
+           //// this.comboBoxEditarTipoConta.Items.Add("1 - Conta Corrente",
+                       // "2 - Conta Poupança");
         }
 
         private void btnVoltarEditarConta_Click(object sender, RoutedEventArgs e)
