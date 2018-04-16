@@ -25,6 +25,17 @@ namespace Controllers
             return ContextoSingleton.Instancia.Enderecos.ToList();
         }
 
+        public void ExcluirEndereco(int idEndereco)
+        {
+
+            Endereco e = ContextoSingleton.Instancia.Enderecos.Find(idEndereco);
+
+            ContextoSingleton.Instancia.Entry(e).State =
+                System.Data.Entity.EntityState.Deleted;
+
+            ContextoSingleton.Instancia.SaveChanges();
+        }
+
 
     }
 }

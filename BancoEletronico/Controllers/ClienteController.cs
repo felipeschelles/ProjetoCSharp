@@ -42,6 +42,9 @@ namespace Controllers
                 System.Data.Entity.EntityState.Deleted;
 
             ContextoSingleton.Instancia.SaveChanges();
+
+            EnderecosController ec = new EnderecosController();
+            ec.ExcluirEndereco(c.EnderecoID);
         }
 
         public List<Cliente> ListarClientes()
@@ -65,6 +68,7 @@ namespace Controllers
                     System.Data.Entity.EntityState.Modified;
 
                 ContextoSingleton.Instancia.SaveChanges();
+
             }
         }
     }
