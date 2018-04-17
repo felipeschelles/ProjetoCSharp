@@ -55,5 +55,28 @@ namespace Controllers
 
             }
         }
+
+        public ContaPoupanca PesquisarPorID(int idConta)
+        {
+            return ContextoSingleton.Instancia.ContasPoupanca.Find(idConta);
+        }
+
+        public Boolean LoginConta(int numero, string senha)
+        {
+            var n = from x in ContextoSingleton.Instancia.ContasPoupanca
+                    where x.Numero == numero
+                    select x;
+
+            var s = from x in ContextoSingleton.Instancia.ContasPoupanca
+                    where x.Senha.ToLower().Contains(senha)
+                    select x;
+
+            if(n != null && s != null)
+            {
+                return true;
+            }
+
+            return false;
+        }
     }
 }

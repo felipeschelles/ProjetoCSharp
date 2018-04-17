@@ -32,9 +32,10 @@ namespace TelaInicial
 
         private void btnLoginCliente_Click(object sender, RoutedEventArgs e)
         {
-            LoginCliente menuCliente = new LoginCliente();
-            menuCliente.Show();
+            LoginClienteConta lcc = new LoginClienteConta(); 
+            lcc.Show();
             Close();
+           
         }
 
         private void btnLoginGerente_Click(object sender, RoutedEventArgs e)

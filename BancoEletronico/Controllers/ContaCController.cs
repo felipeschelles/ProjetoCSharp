@@ -55,5 +55,37 @@ namespace Controllers
             }
 
         }
+
+        public ContaCorrente PesquisarPorID(int idConta)
+        {
+            return ContextoSingleton.Instancia.ContasCorrente.Find(idConta);
+        }
+
+        public Boolean LoginConta(int numero, string senha)
+        {
+
+            var n = from x in ContextoSingleton.Instancia.ContasCorrente
+                    where x.Numero == numero
+                    select x;
+
+            var s = from x in ContextoSingleton.Instancia.ContasCorrente
+                    where x.Senha.Contains(senha)
+                    select x;
+
+
+            if (n != null && s != null){
+                    return true;
+ 
+            }else
+            {
+                ContaPController cp = new ContaPController();
+                Boolean test = cp.LoginConta(numero, senha);
+                if (test)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }

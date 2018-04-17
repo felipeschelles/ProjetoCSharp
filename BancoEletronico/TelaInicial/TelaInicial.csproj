@@ -71,6 +71,9 @@
     <Compile Include="Extrato.xaml.cs">
       <DependentUpon>Extrato.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LoginClienteConta.xaml.cs">
+      <DependentUpon>LoginClienteConta.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Sacar.xaml.cs">
       <DependentUpon>Sacar.xaml</DependentUpon>
     </Compile>
@@ -115,6 +118,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="LoginCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoginClienteConta.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
