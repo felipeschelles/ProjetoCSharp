@@ -39,10 +39,7 @@ namespace TelaInicial
             {
                 dtgListar.Items.Add(x);
             }
-            foreach (var y in Enderecos)
-            {
-                dtgListar.Items.Add(y);
-            }
+            
         }
 
         private void btnVoltar_Click(object sender, RoutedEventArgs e)

@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Controllers;
 
 namespace TelaInicial
 {
@@ -21,20 +22,29 @@ namespace TelaInicial
     /// </summary>
     public partial class ListarContas : Window
     {
-        List<ContaCorrente> ContaLista = new List<ContaCorrente>();
+        List<ContaCorrente> ContaCLista = new List<ContaCorrente>();
+        List<ContaPoupanca> ContaPLista = new List<ContaPoupanca>();
+        List<Cliente> Cli = new List<Cliente>();
         int ContaValue;
 
         public ListarContas()
         {
             InitializeComponent();
             
-            Controllers.ContaCController co = new Controllers.ContaCController();
+            ContaCController cc = new ContaCController();
+            ContaPController cp = new ContaPController();
+            ClienteController c = new ClienteController();
+            Cli = c.ListarClientes();
+            ContaCLista = cc.ListarContas();
+            ContaPLista = cp.ListarContas();
 
-            ContaLista = co.ListarContas();
-
-            foreach (var x in ContaLista)
+            foreach (var x in ContaCLista)
             {
-                dtgListarContas.Items.Add(x);
+                dtgListarContasCorrente.Items.Add(x);
+            }
+            foreach (var x in ContaPLista)
+            {
+                dtgListarContasPoupanca.Items.Add(x);
             }
         }
 
@@ -47,7 +57,8 @@ namespace TelaInicial
 
         private void dataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ContaValue = int.Parse(dtgListarContas.SelectedValue.ToString());
+            ContaValue = int.Parse(dtgListarContasCorrente.SelectedValue.ToString());
+            ContaValue = int.Parse(dtgListarContasPoupanca.SelectedValue.ToString());
         }
     }
 }

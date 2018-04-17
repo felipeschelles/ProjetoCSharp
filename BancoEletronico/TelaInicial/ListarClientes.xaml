@@ -15,8 +15,8 @@
                 <DataGridTextColumn  Binding="{Binding Nome}" Header="Nome" Width="*" SortDirection="Ascending"  />
                 <DataGridTextColumn  Binding="{Binding Cpf}" Header="Cpf" Width="*" SortDirection="Ascending" />
                 <DataGridTextColumn  Binding="{Binding DtAniver}" Header="Data Nascimento" Width="*" SortDirection="Ascending" />
-                <DataGridTextColumn  Binding="{Binding Rua}" Header="Endereco" Width="*" SortDirection="Ascending" />
-                <DataGridTextColumn  Binding="{Binding Numero}" Header="Numero" Width="*" SortDirection="Ascending" />
+                <DataGridTextColumn  Binding="{Binding _Endereco.Rua}" Header="Endereco" Width="*" SortDirection="Ascending" />
+                <DataGridTextColumn  Binding="{Binding _Endereco.Numero}" Header="Numero" Width="*" SortDirection="Ascending" />
                 
             </DataGrid.Columns>
         </DataGrid>
