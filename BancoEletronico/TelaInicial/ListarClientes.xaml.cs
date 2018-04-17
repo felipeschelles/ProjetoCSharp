@@ -52,11 +52,7 @@ namespace TelaInicial
             Close();
         }
 
-        
-
-       
-
-        private void DtGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void dataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             CellValue = int.Parse(dtgListar.SelectedValue.ToString());
         }

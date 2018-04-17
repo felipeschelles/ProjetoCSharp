@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Controllers
 {
-    class ContaPController
+    public class ContaPController
     {
 
 
