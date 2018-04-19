@@ -22,6 +22,7 @@ namespace TelaInicial
     public partial class CadastrarConta : Window
     {
         public int conta=0;
+        public static int numConta = 1000;
         public CadastrarConta()
         {
             InitializeComponent();
@@ -36,15 +37,21 @@ namespace TelaInicial
 
         private void btnBuscar_Click(object sender, RoutedEventArgs e)
         {
-            ClienteController cc = new ClienteController();
-            if (cc.PesquisarPorID(int.Parse(txtBuscarIdCliente.Text)) != null){
-
-
-                MessageBox.Show("Cliente encontrado.");
-                btnSalvar.IsEnabled = true;
+            if (txtBuscarIdCliente.Text == "")
+            {
+                MessageBox.Show("Campo Obrigatorio!!");
             }
-            else{
-                MessageBox.Show("Cliente não encontrado.");
+            else {
+                ClienteController cc = new ClienteController();
+                if (cc.PesquisarPorID(int.Parse(txtBuscarIdCliente.Text)) != null) {
+
+
+                    MessageBox.Show("Cliente encontrado.");
+                    btnSalvar.IsEnabled = true;
+                }
+                else {
+                    MessageBox.Show("Cliente não encontrado.");
+                }
             }
 
         }   
@@ -53,72 +60,92 @@ namespace TelaInicial
         {
             //Conta co = new Conta();
             // ComboBox cbx = sender as ComboBox;
-            if (txtCadastrarConta.Text == "" || txtSaldo.Text == "")
+            if (cboxConta.SelectedItem == null)
             {
-                MessageBox.Show("Campo Obrigatorio!!");
+                MessageBox.Show("Selecione o tipo de conta");
             }
             else
             {
-                if (conta == 1)
+                if (txtSaldo.Text == "" || txtSenha.Text == "")
                 {
-
-                    ContaCorrente cc = new ContaCorrente();
-                    cc.ClienteID = int.Parse(txtBuscarIdCliente.Text);
-                    cc.Numero = int.Parse(txtCadastrarConta.Text);
-                    cc.Saldo = float.Parse(txtSaldo.Text);
-                    cc.Senha = int.Parse(txtSenha.Text);
-                    ContaCController ccc = new ContaCController();
-                    ccc.SalvarContaCorrente(cc);
-                    MessageBox.Show("Conta cadastrada");
-                    btnSalvar.IsEnabled = false;
+                    MessageBox.Show("Campo Obrigatorio!!");
                 }
                 else
                 {
-                    if (conta == 2)
+
+                    
+                    if (conta == 1)
                     {
-                        ContaPoupanca cp = new ContaPoupanca();
-                        cp.ClienteID = int.Parse(txtBuscarIdCliente.Text);
-                        cp.Numero = int.Parse(txtCadastrarConta.Text);
-                        cp.Saldo = float.Parse(txtSaldo.Text);
-                        cp.Senha = int.Parse(txtSenha.Text);
-                        ContaPController ccp = new ContaPController();
-                        ccp.SalvarContaPoupanca(cp);
+
+                        ContaCorrente cc = new ContaCorrente();
+                        cc.ClienteID = int.Parse(txtBuscarIdCliente.Text);
+                        cc.Numero = numConta + 1;
+                        cc.Saldo = float.Parse(txtSaldo.Text);
+                        cc.Senha = int.Parse(txtSenha.Text);
+                        ContaCController ccc = new ContaCController();
+                        ccc.SalvarContaCorrente(cc);
                         MessageBox.Show("Conta cadastrada");
                         btnSalvar.IsEnabled = false;
+                        numConta = numConta + 1;
+
+                        cboxConta.SelectedItem = null;
+                        txtBuscarIdCliente.Clear();
+                        txtSaldo.Clear();
+                        txtSenha.Clear();
                     }
                     else
                     {
-                        MessageBox.Show("Conta não cadastrada");
+                        if (conta == 2)
+                        {
+                            ContaPoupanca cp = new ContaPoupanca();
+                            cp.ClienteID = int.Parse(txtBuscarIdCliente.Text);
+                            cp.Numero = numConta + 1;
+                            cp.Saldo = float.Parse(txtSaldo.Text);
+                            cp.Senha = int.Parse(txtSenha.Text);
+                            ContaPController ccp = new ContaPController();
+                            ccp.SalvarContaPoupanca(cp);
+                            MessageBox.Show("Conta cadastrada");
+                            btnSalvar.IsEnabled = false;
+                            numConta = numConta + 1;
+
+                            cboxConta.SelectedItem = null;
+                            txtBuscarIdCliente.Clear();
+                            txtSaldo.Clear();
+                            txtSenha.Clear();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Conta não cadastrada");
+                        }
                     }
                 }
             }
 
         }
 
-        private void btnVerificarConta_Click(object sender, RoutedEventArgs e)
-        {
 
-            if(int.Parse(txtTipoConta.Text) == 1)
+
+        private void cboxConta_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            lblNumero.Content = numConta;
+            if (cboxConta.SelectedIndex == 0)
             {
                 conta = 1;
-                btnVerificarConta.IsEnabled = true;
+
                 MessageBox.Show("Conta Corrente.");
             }
             else
             {
-               if(int.Parse(txtTipoConta.Text) == 2)
+                if (cboxConta.SelectedIndex == 1)
                 {
                     conta = 2;
-                    btnVerificarConta.IsEnabled = true;
+
                     MessageBox.Show("Conta Poupança.");
                 }
-                else
-                {
-                    MessageBox.Show("Tipo de conta não existe. Digite 1 para conta corrente ou 2 para conta poupança.");
-                    btnVerificarConta.IsEnabled = false;
-                }
+               
             }
-
+            
+            
         }
     }
     

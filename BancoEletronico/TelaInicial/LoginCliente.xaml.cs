@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Controllers;
 
 namespace TelaInicial
 {
@@ -20,11 +21,17 @@ namespace TelaInicial
     /// </summary>
     public partial class LoginCliente : Window
     {
-        public string contaLogada;
+        public int contaLogada;
+        public int tipoConta;
+
         public LoginCliente()
         {
             InitializeComponent();
+
+
         }
+
+        
 
         private void btnVoltar_Click(object sender, RoutedEventArgs e)
         {
@@ -45,10 +52,30 @@ namespace TelaInicial
             depositar.Show();
         }
 
-        private void textBlock_ContextMenuClosing(object sender, ContextMenuEventArgs e)
+       
+
+        private void lblCliente_Initialized(object sender, EventArgs e)
         {
-            textBlock.Text = contaLogada;
+            
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (tipoConta == 1)
+            {
+                ContaCController cc = new ContaCController();
+                lblCliente.Content = cc.ClienteConta(contaLogada);
+            }
+            else
+            {
+                ContaPController cp = new ContaPController();
+                lblCliente.Content = cp.ClienteConta(contaLogada);
+            }
+        }
+
+
+
+
 
 
 

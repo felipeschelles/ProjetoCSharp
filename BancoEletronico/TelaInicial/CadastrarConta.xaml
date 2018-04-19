@@ -4,9 +4,11 @@
         xmlns:Models="clr-namespace:Models;assembly=Models" x:Class="TelaInicial.CadastrarConta"
         Title="CadastrarConta" Height="480" Width="825">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="C:\Users\Felipe\Source\Repos\ProjetoCSharp\BancoEletronico\TelaInicial\TestBack1.png"/>
+        </Grid.Background>
         <Label x:Name="lblCadastrarConta" Content="Cadastrar Conta" HorizontalAlignment="Left" Margin="53,35,0,0" VerticalAlignment="Top" FontSize="28"/>
         <Label x:Name="lblNumeroConta" Content="Número da nova conta:" HorizontalAlignment="Left" Margin="69,139,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtCadastrarConta" HorizontalAlignment="Left" Height="23" Margin="259,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="lblTipoConta" Content="Tipo Conta:" HorizontalAlignment="Left" Margin="69,82,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label" Content="Id Cliente:" HorizontalAlignment="Left" Margin="69,113,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtBuscarIdCliente" HorizontalAlignment="Left" Height="23" Margin="259,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="true"/>
@@ -17,8 +19,11 @@
         <TextBox x:Name="txtSaldo" HorizontalAlignment="Left" Height="23" Margin="259,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="lblSenha" Content="Senha:" HorizontalAlignment="Left" Margin="69,193,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtSenha" HorizontalAlignment="Left" Height="23" Margin="259,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtTipoConta" HorizontalAlignment="Left" Height="23" Margin="259,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btnVerificarConta" Content="Verificar" HorizontalAlignment="Left" Margin="445,82,0,0" VerticalAlignment="Top" Width="75" Click="btnVerificarConta_Click"/>
+        <ComboBox x:Name="cboxConta"  HorizontalAlignment="Left" Margin="259,82,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cboxConta_SelectionChanged">
+            <ComboBoxItem x:Name="contaC" Content="Conta Corrente" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem x:Name="contaP" Content="Conta Poupanca" HorizontalAlignment="Left" Width="118"/>
+        </ComboBox>
+        <Label x:Name="lblNumero" Content="Conta Nº" HorizontalAlignment="Left" Margin="261,142,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

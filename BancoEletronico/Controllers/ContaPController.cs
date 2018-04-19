@@ -75,5 +75,23 @@ namespace Controllers
 
             return true;
         }
+
+        public string ClienteConta(int numero)
+        {
+            string nome;
+            ContaPoupanca c = (from x in ContextoSingleton.Instancia.ContasPoupanca
+                               where x.Numero == numero
+                               select x).FirstOrDefault();
+
+            if (c != null)
+            {
+                nome = c._Cliente.Nome;
+                return nome;
+            }
+            else
+            {
+                return "Nulo";
+            }
+        }
     }
 }

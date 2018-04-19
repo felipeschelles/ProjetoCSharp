@@ -11,7 +11,7 @@
 
         public int ClienteID { get; set; }
 
-        public Cliente _Cliente { get; set; }
+        public virtual Cliente _Cliente { get; set; }
 
         public double Saldo { get; set; }
 

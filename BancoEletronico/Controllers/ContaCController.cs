@@ -76,6 +76,24 @@ namespace Controllers
 
             return true;
         }
+
+        public string ClienteConta (int numero)
+        {
+            string nome;
+            ContaCorrente c = (from x in ContextoSingleton.Instancia.ContasCorrente
+                                 where x.Numero == numero
+                                 select x).FirstOrDefault();
+
+
+            if (c != null) {
+                nome = c._Cliente.Nome;
+                return nome;
+            }
+            else
+            {
+                return "Nulo";
+            }
+        }
       /*  public void Sacar()
         {
 

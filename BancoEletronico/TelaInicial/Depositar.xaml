@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="Depositar" Height="280" Width="400">
     <Grid>
+        
         <TextBox x:Name="txtVlrDepositar" Height="23" Margin="95,118,177,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <Label x:Name="lblDepositar" Content="Depositar" Margin="149,28,148,0" VerticalAlignment="Top" FontSize="20"/>
         <Label x:Name="lblVlrDepositar" Content="Valor:" HorizontalAlignment="Left" Margin="40,115,0,0" VerticalAlignment="Top"/>

@@ -3,6 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="EditarConta" Height="480" Width="825">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="C:\Users\Felipe\Source\Repos\ProjetoCSharp\BancoEletronico\TelaInicial\TestBack1.png"/>
+        </Grid.Background>
         <Label x:Name="lblEditarConta" Content="Editar Conta" HorizontalAlignment="Left" Margin="44,36,0,0" VerticalAlignment="Top" IsEnabled="False" FontSize="28"/>
         <Label x:Name="lblEditarConta1" Content="Tipo de conta:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="44,157,0,0"/>
         <ComboBox x:Name="comboBoxEditarTipoConta" HorizontalAlignment="Left" Margin="161,160,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="comboBoxEditarTipoConta_SelectionChanged"/>

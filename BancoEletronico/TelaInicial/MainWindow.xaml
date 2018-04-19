@@ -8,9 +8,12 @@
         Title="MainWindow" Height="480" Width="854">
    
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="C:\Users\Felipe\Source\Repos\ProjetoCSharp\BancoEletronico\TelaInicial\TestBack1.png"/>
+        </Grid.Background>
         <Label x:Name="lblNome" Content="Banco Eletronico" HorizontalAlignment="Left" Margin="296,26,0,0" VerticalAlignment="Top" FontSize="32"/>
-        <Button x:Name="btnLoginCliente" Content="Login Cliente" HorizontalAlignment="Left" Margin="128,202,0,0" VerticalAlignment="Top" Width="128" Height="71" Click="btnLoginCliente_Click"/>
-        <Button x:Name="btnLoginGerente" Content="Login Gerente" Margin="590,202,128,0" VerticalAlignment="Top" Height="71" Click="btnLoginGerente_Click"/>
-        <Button x:Name="btnSair" Content="Sair" Margin="386,346,386,0" VerticalAlignment="Top" Click="btnSair_Click"/>
+        <Button x:Name="btnLoginCliente" Content="Login Cliente" HorizontalAlignment="Left" Margin="180,219,0,0" VerticalAlignment="Top" Width="128" Height="71" Click="btnLoginCliente_Click"/>
+        <Button x:Name="btnLoginGerente" Content="Login Gerente" Margin="538,219,180,0" VerticalAlignment="Top" Height="71" Click="btnLoginGerente_Click"/>
+        <Button x:Name="btnSair" Content="Sair" Margin="762,419,10,0" VerticalAlignment="Top" Click="btnSair_Click"/>
     </Grid>
 </Window>

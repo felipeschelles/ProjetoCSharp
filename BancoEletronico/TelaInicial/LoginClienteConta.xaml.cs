@@ -37,7 +37,8 @@ namespace TelaInicial
                 if (testC)
                 {
                     LoginCliente menuCliente = new LoginCliente();
-                    menuCliente.contaLogada = txtNumero.Text ;
+                    menuCliente.contaLogada = int.Parse(txtNumero.Text);
+                    menuCliente.tipoConta = 1;
                     menuCliente.Show();
                     Close();
                 }
@@ -48,7 +49,8 @@ namespace TelaInicial
                     if (testP)
                     {
                         LoginCliente menuCliente = new LoginCliente();
-
+                        menuCliente.contaLogada = int.Parse(txtNumero.Text);
+                        menuCliente.tipoConta = 2;
                         menuCliente.Show();
                         Close();
 
@@ -63,6 +65,13 @@ namespace TelaInicial
                 
             }
            
+        }
+
+        private void btnVoltar_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow menuGeral = new MainWindow();
+            menuGeral.Show();
+            Close();
         }
     }
 }

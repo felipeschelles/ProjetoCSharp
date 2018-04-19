@@ -35,18 +35,24 @@ namespace TelaInicial
 
         private void btnSalvar_Click(object sender, RoutedEventArgs e)
         {
-            Cliente c = new Cliente();
-            c.Nome = txtNome.Text;
-            c.DtAniver = txtDtNascimento.Text;
-            c.Cpf = txtCPF.Text;
 
-            Endereco end = cadastrarEndereco();
+            if (txtCPF.Text == "" || txtDtNascimento.Text == "" || txtNome.Text == "" || txtNumero.Text == "" || txtRua.Text == "") {
+                MessageBox.Show("Campo Obrigatorio!!");
+            }
+            else {
+                Cliente c = new Cliente();
+                c.Nome = txtNome.Text;
+                c.DtAniver = txtDtNascimento.Text;
+                c.Cpf = txtCPF.Text;
 
-            c.EnderecoID = end.EnderecoID;
+                Endereco end = cadastrarEndereco();
 
-            ClienteController cc = new ClienteController();
-            cc.SalvarCliente(c);
-            MessageBox.Show("Cliente cadastrado com sucesso.");
+                c.EnderecoID = end.EnderecoID;
+
+                ClienteController cc = new ClienteController();
+                cc.SalvarCliente(c);
+                MessageBox.Show("Cliente cadastrado com sucesso.");
+            }
         }
 
         private Endereco cadastrarEndereco()

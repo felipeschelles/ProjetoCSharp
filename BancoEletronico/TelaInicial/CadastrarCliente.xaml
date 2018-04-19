@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="CadastrarCliente" Height="480" Width="854">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="C:\Users\Felipe\Source\Repos\ProjetoCSharp\BancoEletronico\TelaInicial\TestBack1.png"/>
+        </Grid.Background>
         <Label x:Name="lblCadastrarCliente" Content="Cadastrar Cliente" HorizontalAlignment="Left" Margin="46,28,0,0" VerticalAlignment="Top" FontSize="28"/>
         <Label x:Name="lblNome" Content="Nome:" HorizontalAlignment="Left" Margin="30,100,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblDtNascimento" Content="Data de nascimento:" HorizontalAlignment="Left" Margin="30,155,0,0" VerticalAlignment="Top"/>

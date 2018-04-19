@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="ExcluirConta" Height="480" Width="825">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="C:\Users\Felipe\Source\Repos\ProjetoCSharp\BancoEletronico\TelaInicial\TestBack1.png"/>
+        </Grid.Background>
         <Label x:Name="lblExcluirConta" Content="Excluir Conta" HorizontalAlignment="Left" Margin="39,10,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lvlExcluirConta" Content="Número da Conta:" HorizontalAlignment="Left" Margin="39,58,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtExcluirConta" HorizontalAlignment="Left" Height="23" Margin="183,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
