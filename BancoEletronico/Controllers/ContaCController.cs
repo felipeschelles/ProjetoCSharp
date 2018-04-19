@@ -61,31 +61,31 @@ namespace Controllers
             return ContextoSingleton.Instancia.ContasCorrente.Find(idConta);
         }
 
-        public Boolean LoginConta(int numero, string senha)
+        public Boolean LoginContaCorrente(int numero, int senha)
         {
 
-            var n = from x in ContextoSingleton.Instancia.ContasCorrente
-                    where x.Numero == numero
-                    select x;
+            ContaCorrente n = (from x in ContextoSingleton.Instancia.ContasCorrente
+                    where x.Numero == numero && x.Senha == senha
+                    select x).FirstOrDefault();
 
-            var s = from x in ContextoSingleton.Instancia.ContasCorrente
-                    where x.Senha.Contains(senha)
-                    select x;
+            if (n == null){
 
-
-            if (n != null && s != null){
-                    return true;
+                    return false;
  
             }else
-            {
-                ContaPController cp = new ContaPController();
-                Boolean test = cp.LoginConta(numero, senha);
-                if (test)
-                {
-                    return true;
-                }
-            }
-            return false;
+
+            return true;
         }
+      /*  public void Sacar()
+        {
+
+            ContaCorrente c = new ContaCorrente();
+
+
+            if (c.Saldo >= 100.0)
+            {
+                c.Saldo -= 100.0;
+            }
+        }*/
     }
 }

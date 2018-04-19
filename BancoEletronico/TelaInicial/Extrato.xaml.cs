@@ -1,4 +1,6 @@
 ﻿using System;
+using Controllers;
+using Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +24,12 @@ namespace TelaInicial
         public Extrato()
         {
             InitializeComponent();
+        }
+
+        private void lblNomeExtrato_ContextMenuClosing(object sender, ContextMenuEventArgs e)
+        {
+            Cliente c = new Cliente();
+            //lblNomeExtrato = Convert.ToString(c.Nome);
         }
     }
 }

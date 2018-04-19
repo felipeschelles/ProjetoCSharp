@@ -7,13 +7,27 @@
         
         public int Numero { get; set; }
 
-        public string Senha { get; set; }
+        public int Senha { get; set; }
 
         public int ClienteID { get; set; }
 
         public Cliente _Cliente { get; set; }
 
-        public float Saldo { get; set; }
+        public double Saldo { get; set; }
 
     }
+
+
+   // public void Sacar(double sacar)
+  /*  {
+        this.Saldo -= sacar;
+    }
+
+    public void Deposito(double deposito)
+    {
+        this.Sacar += deposito;
+    }*/
+
+
+
 }

@@ -61,22 +61,19 @@ namespace Controllers
             return ContextoSingleton.Instancia.ContasPoupanca.Find(idConta);
         }
 
-        public Boolean LoginConta(int numero, string senha)
+        public Boolean LoginContaPoupanca(int numero, int senha)
         {
-            var n = from x in ContextoSingleton.Instancia.ContasPoupanca
-                    where x.Numero == numero
-                    select x;
+            ContaPoupanca n = (from x in ContextoSingleton.Instancia.ContasPoupanca
+                               where x.Numero == numero && x.Senha == senha
+                               select x).FirstOrDefault();
 
-            var s = from x in ContextoSingleton.Instancia.ContasPoupanca
-                    where x.Senha.ToLower().Contains(senha)
-                    select x;
 
-            if(n != null && s != null)
+            if (n == null)
             {
-                return true;
+                return false;
             }
 
-            return false;
+            return true;
         }
     }
 }

@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="Extrato" Height="480" Width="825">
     <Grid>
-        
+        <Label x:Name="lblNomeExtrato" Content="Label" HorizontalAlignment="Left" Margin="44,44,0,0" VerticalAlignment="Top" Height="45" Width="63" ContextMenuClosing="lblNomeExtrato_ContextMenuClosing"/>
+
     </Grid>
 </Window>

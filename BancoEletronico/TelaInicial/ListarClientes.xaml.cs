@@ -34,7 +34,7 @@ namespace TelaInicial
             Controllers.EnderecosController end = new Controllers.EnderecosController();
             Enderecos = end.listarEnderecos();
             ClienteLista = cc.ListarClientes();
-
+            
             foreach (var x in ClienteLista)
             {
                 dtgListar.Items.Add(x);

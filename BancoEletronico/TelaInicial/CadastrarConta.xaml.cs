@@ -53,37 +53,43 @@ namespace TelaInicial
         {
             //Conta co = new Conta();
             // ComboBox cbx = sender as ComboBox;
-
-            if (conta == 1)
+            if (txtCadastrarConta.Text == "" || txtSaldo.Text == "")
             {
-
-                ContaCorrente cc = new ContaCorrente();
-                cc.ClienteID = int.Parse(txtBuscarIdCliente.Text);
-                cc.Numero = int.Parse(txtCadastrarConta.Text);
-                cc.Saldo = float.Parse(txtSaldo.Text);
-                //cc.Senha = int.Parse(txtSenha.Text);
-                ContaCController ccc = new ContaCController();
-                ccc.SalvarContaCorrente(cc);
-                MessageBox.Show("Conta cadastrada");
-                btnSalvar.IsEnabled = false;
+                MessageBox.Show("Campo Obrigatorio!!");
             }
             else
             {
-                if (conta == 2)
+                if (conta == 1)
                 {
-                    ContaPoupanca cp = new ContaPoupanca();
-                    cp.ClienteID = int.Parse(txtBuscarIdCliente.Text);
-                    cp.Numero = int.Parse(txtCadastrarConta.Text);
-                    cp.Saldo = float.Parse(txtSaldo.Text);
-                    //cp.Senha = int.Parse(txtSenha.Text);
-                    ContaPController ccp = new ContaPController();
-                    ccp.SalvarContaPoupanca(cp);
+
+                    ContaCorrente cc = new ContaCorrente();
+                    cc.ClienteID = int.Parse(txtBuscarIdCliente.Text);
+                    cc.Numero = int.Parse(txtCadastrarConta.Text);
+                    cc.Saldo = float.Parse(txtSaldo.Text);
+                    cc.Senha = int.Parse(txtSenha.Text);
+                    ContaCController ccc = new ContaCController();
+                    ccc.SalvarContaCorrente(cc);
                     MessageBox.Show("Conta cadastrada");
                     btnSalvar.IsEnabled = false;
                 }
                 else
                 {
-                    MessageBox.Show("Conta não cadastrada");
+                    if (conta == 2)
+                    {
+                        ContaPoupanca cp = new ContaPoupanca();
+                        cp.ClienteID = int.Parse(txtBuscarIdCliente.Text);
+                        cp.Numero = int.Parse(txtCadastrarConta.Text);
+                        cp.Saldo = float.Parse(txtSaldo.Text);
+                        cp.Senha = int.Parse(txtSenha.Text);
+                        ContaPController ccp = new ContaPController();
+                        ccp.SalvarContaPoupanca(cp);
+                        MessageBox.Show("Conta cadastrada");
+                        btnSalvar.IsEnabled = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Conta não cadastrada");
+                    }
                 }
             }
 

@@ -27,19 +27,40 @@ namespace TelaInicial
 
         private void btnLogar_Click(object sender, RoutedEventArgs e)
         {
+            if (txtNumero.Text == "" || txtSenha.Text == "")
+            {
+                MessageBox.Show("Campo Obrigatorio!!");
+            }else { 
             ContaCController cc = new ContaCController();
-            Boolean test = cc.LoginConta(int.Parse(txtNumero.Text), txtSenha.Text);
-            if (test)
-            {
-                LoginCliente menuCliente = new LoginCliente();
-                menuCliente.Show();
-                Close();
-            }
-            else
-            {
-                MessageBox.Show("Conta não encontrada!!.");
-                txtNumero.Clear();
-                txtSenha.Clear();
+            Boolean testC = cc.LoginContaCorrente(int.Parse(txtNumero.Text), int.Parse(txtSenha.Text));
+
+                if (testC)
+                {
+                    LoginCliente menuCliente = new LoginCliente();
+                    menuCliente.contaLogada = txtNumero.Text ;
+                    menuCliente.Show();
+                    Close();
+                }
+                else
+                {
+                    ContaPController cp = new ContaPController();
+                    Boolean testP = cp.LoginContaPoupanca(int.Parse(txtNumero.Text), int.Parse(txtSenha.Text));
+                    if (testP)
+                    {
+                        LoginCliente menuCliente = new LoginCliente();
+
+                        menuCliente.Show();
+                        Close();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Conta não encontrada!!.");
+                        txtNumero.Clear();
+                        txtSenha.Clear();
+                    }
+                }
+                
             }
            
         }

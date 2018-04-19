@@ -14,5 +14,7 @@
         <Button x:Name="btnExtrato" Content="Extrato" Margin="646,225,90,0" VerticalAlignment="Top" Height="40"/>
         <Button x:Name="btnVoltar" Content="Voltar" HorizontalAlignment="Left" Margin="761,419,0,0" VerticalAlignment="Top" Width="75" Click="btnVoltar_Click"/>
 
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="197,186,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" ContextMenuClosing="textBlock_ContextMenuClosing" FontSize="20" FontWeight="Bold"/>
+
     </Grid>
 </Window>

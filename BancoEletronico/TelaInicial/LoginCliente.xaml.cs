@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,7 @@ namespace TelaInicial
     /// </summary>
     public partial class LoginCliente : Window
     {
+        public string contaLogada;
         public LoginCliente()
         {
             InitializeComponent();
@@ -42,5 +44,19 @@ namespace TelaInicial
             Depositar depositar = new Depositar();
             depositar.Show();
         }
+
+        private void textBlock_ContextMenuClosing(object sender, ContextMenuEventArgs e)
+        {
+            textBlock.Text = contaLogada;
+        }
+
+
+
+        /* private void lblNome_ContextMenuClosing(object sender, ContextMenuEventArgs e)
+         {
+             Cliente c= new Cliente();
+             texto = c.Nome;
+             lblNome = ;
+         }*/
     }
 }

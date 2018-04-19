@@ -1,4 +1,6 @@
 ﻿using System;
+using Models;
+using Controllers;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,6 +29,15 @@ namespace TelaInicial
         private void btnFechar_Click(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void btnSacar_Click(object sender, RoutedEventArgs e)
+        {
+            Controllers.ContaCController cc = new ContaCController();
+
+            double sacarConta = Convert.ToDouble(txtVlrSacar.Text);
+
+
         }
     }
 }
