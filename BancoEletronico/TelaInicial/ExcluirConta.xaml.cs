@@ -38,12 +38,12 @@ namespace TelaInicial
             if (co.PesquisarContaPorID(int.Parse(txtExcluirConta.Text)) != null)
             {
 
-                MessageBox.Show("Cliente encontrado.");
+                MessageBox.Show("Conta encontrada.");
                 btnExcluir.IsEnabled = true;
             }
             else
             {
-                MessageBox.Show("Cliente não encontrado.");
+                MessageBox.Show("Conta não encontrada.");
                 btnExcluir.IsEnabled = false;
             }
         }

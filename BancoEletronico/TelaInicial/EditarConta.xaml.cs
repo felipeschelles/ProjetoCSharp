@@ -47,12 +47,12 @@ namespace TelaInicial
             
             {
                 
-                MessageBox.Show("Cliente encontrado.");
+                MessageBox.Show("Conta encontrada.");
                 btnEditarConta.IsEnabled = true;
             }
             else
             {
-                MessageBox.Show("Cliente não encontrado.");
+                MessageBox.Show("Conta não encontrada.");
             }
         }
 
