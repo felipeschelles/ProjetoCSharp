@@ -46,11 +46,11 @@ namespace TelaInicial
                 if (cc.PesquisarPorID(int.Parse(txtBuscarIdCliente.Text)) != null) {
 
 
-                    MessageBox.Show("Cliente encontrado.");
+                    MessageBox.Show("Conta encontrada.");
                     btnSalvar.IsEnabled = true;
                 }
                 else {
-                    MessageBox.Show("Cliente não encontrado.");
+                    MessageBox.Show("Conta não encontrada.");
                 }
             }
 
