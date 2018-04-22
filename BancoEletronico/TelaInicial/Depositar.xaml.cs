@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Controllers;
 
 namespace TelaInicial
 {
@@ -19,6 +20,9 @@ namespace TelaInicial
     /// </summary>
     public partial class Depositar : Window
     {
+        public int conta;
+        public int tipoConta;
+
         public Depositar()
         {
             InitializeComponent();
@@ -27,6 +31,41 @@ namespace TelaInicial
         private void btnFechar_Click(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void btnDepositar_Click(object sender, RoutedEventArgs e)
+        {
+            if (tipoConta == 1)
+            {
+                ContaCController cc = new ContaCController();
+                double sacarConta = Convert.ToDouble(txtVlrDepositar.Text);
+                if(cc.Movimento(conta, sacarConta, 1))
+                {
+                    MessageBox.Show("Deposito efetuado com sucesso!!");
+                    txtVlrDepositar.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Não foi possivel realizar o deposito");
+                    txtVlrDepositar.Clear();
+                }
+            }
+            else
+            {
+                ContaPController cp = new ContaPController();
+                double sacarConta = Convert.ToDouble(txtVlrDepositar.Text);
+                if (cp.Movimento(conta, sacarConta, 1))
+                {
+                    MessageBox.Show("Deposito efetuado com sucesso!!");
+                    txtVlrDepositar.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Não foi possivel realizar o deposito");
+                    txtVlrDepositar.Clear();
+                }
+
+            }
         }
     }
 }

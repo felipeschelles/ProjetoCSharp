@@ -17,6 +17,7 @@
                  <DataGridTextColumn  Binding="{Binding ContaCorrenteID}" Header="ID" Width="*" SortDirection="Ascending"  />
                  <DataGridTextColumn  Binding="{Binding Numero}" Header="Nunero da Conta" Width="*" SortDirection="Ascending"  />
                 <DataGridTextColumn  Binding="{Binding _Cliente.Nome}" Header="Nome do cliente" Width="*" SortDirection="Ascending" />
+                <DataGridTextColumn  Binding="{Binding Saldo}" Header="saldo" Width="*" SortDirection="Ascending" />
                 <DataGridTextColumn  Binding="{Binding Senha}" Header="Senha" Width="*" SortDirection="Ascending" />
             </DataGrid.Columns>
         </DataGrid>
@@ -25,6 +26,7 @@
                 <DataGridTextColumn  Binding="{Binding ContaPoupancaID}" Header="ID" Width="*" SortDirection="Ascending"  />
                 <DataGridTextColumn  Binding="{Binding Numero}" Header="Nunero da Conta" Width="*" SortDirection="Ascending"  />
                 <DataGridTextColumn  Binding="{Binding _Cliente.Nome}" Header="Nome do cliente" Width="*" SortDirection="Ascending" />
+                <DataGridTextColumn  Binding="{Binding Saldo}" Header="saldo" Width="*" SortDirection="Ascending" />
                 <DataGridTextColumn  Binding="{Binding Senha}" Header="Senha" Width="*" SortDirection="Ascending" />
             </DataGrid.Columns>
         </DataGrid>

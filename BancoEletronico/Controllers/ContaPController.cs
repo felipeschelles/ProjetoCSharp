@@ -37,24 +37,7 @@ namespace Controllers
             return ContextoSingleton.Instancia.ContasPoupanca.ToList();
         }
 
-        public void Movimento(int idContaEditar, ContaPoupanca contaEditada)
-        {
-            ContaPoupanca contaEditar = PesquisarContaPorID(idContaEditar);
 
-            if (contaEditar != null)
-            {
-
-                contaEditar.Saldo = contaEditada.Saldo;
-
-                ContextoSingleton
-                   .Instancia
-                   .Entry(contaEditar).State =
-                   System.Data.Entity.EntityState.Modified;
-
-                ContextoSingleton.Instancia.SaveChanges();
-
-            }
-        }
 
         public ContaPoupanca PesquisarPorID(int idConta)
         {
@@ -76,21 +59,89 @@ namespace Controllers
             return true;
         }
 
-        public string ClienteConta(int numero)
+        public ContaPoupanca ClienteConta(int numero)
         {
-            string nome;
+
             ContaPoupanca c = (from x in ContextoSingleton.Instancia.ContasPoupanca
                                where x.Numero == numero
                                select x).FirstOrDefault();
 
             if (c != null)
             {
-                nome = c._Cliente.Nome;
-                return nome;
+                return c;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public string NomeClienteConta(int numero)
+        {
+
+            ContaPoupanca c = (from x in ContextoSingleton.Instancia.ContasPoupanca
+                               where x.Numero == numero
+                               select x).FirstOrDefault();
+
+            if (c != null)
+            {
+                return c._Cliente.Nome;
             }
             else
             {
                 return "Nulo";
+            }
+        }
+
+        public Boolean Movimento(int idContaEditar, Double valor, int tipoMovimento)
+        {
+            ContaPoupanca contaEditar = ClienteConta(idContaEditar);
+
+
+            if (tipoMovimento == 1)
+            {
+                if (valor < 1)
+                {
+                    return false;
+                }
+                else
+                {
+                    if (contaEditar != null)
+                    {
+                        contaEditar.Saldo = contaEditar.Saldo + valor;
+
+                        ContextoSingleton
+                            .Instancia
+                            .Entry(contaEditar).State =
+                            System.Data.Entity.EntityState.Modified;
+
+                        ContextoSingleton.Instancia.SaveChanges();
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            else
+            {
+                if (valor > contaEditar.Saldo)
+                {
+                    return false;
+                }
+                else
+                {
+                    contaEditar.Saldo = contaEditar.Saldo - valor;
+
+                    ContextoSingleton
+                            .Instancia
+                            .Entry(contaEditar).State =
+                            System.Data.Entity.EntityState.Modified;
+
+                    ContextoSingleton.Instancia.SaveChanges();
+                    return true;
+                }
             }
         }
     }

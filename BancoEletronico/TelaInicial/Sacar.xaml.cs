@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Controllers;
 
 namespace TelaInicial
 {
@@ -21,6 +22,10 @@ namespace TelaInicial
     /// </summary>
     public partial class Sacar : Window
     {
+        public int conta;
+        public int tipoConta;
+
+
         public Sacar()
         {
             InitializeComponent();
@@ -33,9 +38,38 @@ namespace TelaInicial
 
         private void btnSacar_Click(object sender, RoutedEventArgs e)
         {
-            Controllers.ContaCController cc = new ContaCController();
 
-            double sacarConta = Convert.ToDouble(txtVlrSacar.Text);
+            if (tipoConta == 1)
+            {
+                ContaCController cc = new ContaCController();
+                double sacarConta = Convert.ToDouble(txtVlrSacar.Text);
+                if(cc.Movimento(conta, sacarConta, 2))
+                {
+                    MessageBox.Show("Saque efetuado com sucesso!!");
+                    txtVlrSacar.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Não foi possivel realizar o saque");
+                    txtVlrSacar.Clear();
+                }
+            }
+            else
+            {
+                ContaPController cp = new ContaPController();
+                double sacarConta = Convert.ToDouble(txtVlrSacar.Text);
+                if (cp.Movimento(conta, sacarConta, 2))
+                {
+                    MessageBox.Show("Saque efetuado com sucesso!!");
+                    txtVlrSacar.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Não foi possivel realizar o saque");
+                    txtVlrSacar.Clear();
+                }
+
+            }
 
 
         }

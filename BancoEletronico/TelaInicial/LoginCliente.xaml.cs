@@ -43,12 +43,16 @@ namespace TelaInicial
         private void btnSacar_Click(object sender, RoutedEventArgs e)
         {
             Sacar sacar = new Sacar();
+            sacar.conta = contaLogada;
+            sacar.tipoConta = tipoConta;
             sacar.Show();
         }
 
         private void btnDepositar_Click(object sender, RoutedEventArgs e)
         {
             Depositar depositar = new Depositar();
+            depositar.conta = contaLogada;
+            depositar.tipoConta = tipoConta;
             depositar.Show();
         }
 
@@ -64,12 +68,12 @@ namespace TelaInicial
             if (tipoConta == 1)
             {
                 ContaCController cc = new ContaCController();
-                lblCliente.Content = cc.ClienteConta(contaLogada);
+                lblCliente.Content = cc.NomeClienteConta(contaLogada);
             }
             else
             {
                 ContaPController cp = new ContaPController();
-                lblCliente.Content = cp.ClienteConta(contaLogada);
+                lblCliente.Content = cp.NomeClienteConta(contaLogada);
             }
         }
 
