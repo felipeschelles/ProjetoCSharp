@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+
 namespace TelaInicial
 {
     /// <summary>
@@ -21,8 +22,11 @@ namespace TelaInicial
     /// </summary>
     public partial class Extrato : Window
     {
+        public int conta;
+        public int tipoConta;
+
         public Extrato()
-        {
+        {            
             InitializeComponent();
         }
 

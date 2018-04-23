@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Sacar" Height="280" Width="400">
     <Grid>
-        <Label x:Name="lblSacar" Content="Sacar" Margin="167,28,168,0" VerticalAlignment="Top" FontSize="20"/>
+        <Label x:Name="lblSacar" Content="Sacar" Margin="167,28,142,0" VerticalAlignment="Top" FontSize="20"/>
         <TextBox x:Name="txtVlrSacar" HorizontalAlignment="Left" Height="23" Margin="95,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" SelectionOpacity="-4"/>
         <Label x:Name="lblVlrSacar" Content="Valor:" HorizontalAlignment="Left" Margin="40,169,0,0" VerticalAlignment="Top"/>
         <Button x:Name="btnFechar" Content="Fechar" HorizontalAlignment="Left" Margin="307,219,0,0" VerticalAlignment="Top" Width="75" Click="btnFechar_Click"/>

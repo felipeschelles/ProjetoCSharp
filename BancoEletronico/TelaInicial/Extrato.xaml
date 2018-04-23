@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TelaInicial"
         mc:Ignorable="d"
-        Title="Extrato" Height="480" Width="825">
+        Title="Extrato" Height="650" Width="550">
     <Grid>
-        <Label x:Name="lblNomeExtrato" Content="Label" HorizontalAlignment="Left" Margin="44,44,0,0" VerticalAlignment="Top" Height="45" Width="63" ContextMenuClosing="lblNomeExtrato_ContextMenuClosing"/>
+        <Label x:Name="lblNomeExtrato" Content="Extrato" Margin="224,10,234,0" VerticalAlignment="Top" Height="45" ContextMenuClosing="lblNomeExtrato_ContextMenuClosing" FontSize="22" FontWeight="Bold"/>
 
     </Grid>
 </Window>

@@ -22,10 +22,32 @@ namespace TelaInicial
     public partial class CadastrarConta : Window
     {
         public int conta=0;
-        public static int numConta = 1000;
+        public static int numConta;
         public CadastrarConta()
         {
             InitializeComponent();
+        }
+
+        private void UltimaConta()
+        {
+            ContaCController cc = new ContaCController();
+            ContaPController cp = new ContaPController();
+
+            if(cc.ListarContas() == null)
+            {
+                if(cp.ListarContas() == null)
+                {
+                    numConta = 1000;
+                }
+                else
+                {
+                    numConta = cp.ListarContas().Last().Numero + 1;
+                }
+            }
+            else
+            {
+                numConta = cc.ListarContas().Last().Numero + 1;
+            }
         }
 
         private void btnVoltarCadastrarConta_Click(object sender, RoutedEventArgs e)
@@ -127,20 +149,17 @@ namespace TelaInicial
 
         private void cboxConta_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            UltimaConta();
             lblNumero.Content = numConta;
             if (cboxConta.SelectedIndex == 0)
             {
                 conta = 1;
-
-                MessageBox.Show("Conta Corrente.");
             }
             else
             {
                 if (cboxConta.SelectedIndex == 1)
                 {
                     conta = 2;
-
-                    MessageBox.Show("Conta Poupança.");
                 }
                
             }

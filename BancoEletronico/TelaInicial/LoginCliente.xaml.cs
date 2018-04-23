@@ -77,6 +77,14 @@ namespace TelaInicial
             }
         }
 
+        private void btnExtrato_Click(object sender, RoutedEventArgs e)
+        {
+            Extrato ex = new Extrato();
+            ex.conta = contaLogada;
+            ex.tipoConta = tipoConta;
+            ex.Show();
+        }
+
 
 
 
