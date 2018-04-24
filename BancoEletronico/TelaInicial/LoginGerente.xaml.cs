@@ -71,12 +71,6 @@ namespace TelaInicial
 
         }
 
-        private void btnEditarContas_Click(object sender, RoutedEventArgs e)
-        {
-            EditarConta listEditarConta = new EditarConta();
-            listEditarConta.Show();
-            Close();
-        }
 
         private void btnExcluirContas_Click(object sender, RoutedEventArgs e)
         {

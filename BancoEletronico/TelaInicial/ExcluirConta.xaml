@@ -11,11 +11,11 @@
             <ImageBrush ImageSource="C:\Users\Felipe\Source\Repos\ProjetoCSharp\BancoEletronico\TelaInicial\TestBack1.png"/>
         </Grid.Background>
         <Label x:Name="lblExcluirConta" Content="Excluir Conta" HorizontalAlignment="Left" Margin="39,10,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lvlExcluirConta" Content="Número da Conta:" HorizontalAlignment="Left" Margin="39,58,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtExcluirConta" HorizontalAlignment="Left" Height="23" Margin="183,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lvlExcluirConta" Content="Id da Conta:" HorizontalAlignment="Left" Margin="39,58,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtExcluirConta" HorizontalAlignment="Left" Height="23" Margin="130,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="btnExcluir" Content="Excluir" HorizontalAlignment="Left" Margin="632,418,0,0" VerticalAlignment="Top" Width="75" IsEnabled="False"/>
         <Button x:Name="btnVoltarExContas" Content="Voltar" HorizontalAlignment="Left" Margin="733,418,0,0" VerticalAlignment="Top" Width="75" Click="btnVoltarExContas_Click"/>
-        <Button x:Name="btnVerificarConta" Content="Verificar" HorizontalAlignment="Left" Margin="329,61,0,0" VerticalAlignment="Top" Width="75" Click="btnVerificarConta_Click"/>
+        <Button x:Name="btnVerificarConta" Content="Verificar" HorizontalAlignment="Left" Margin="276,61,0,0" VerticalAlignment="Top" Width="75" Click="btnVerificarConta_Click"/>
 
     </Grid>
 </Window>

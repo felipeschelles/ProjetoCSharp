@@ -27,30 +27,32 @@ namespace TelaInicial
 
         private void btnLogar_Click(object sender, RoutedEventArgs e)
         {
-            if (txtNumero.Text == "" || txtSenha.Text == "")
+            if (txtNumero.Text == "" || txtSenha.Password == "")
             {
                 MessageBox.Show("Campo Obrigatorio!!");
             }else { 
             ContaCController cc = new ContaCController();
-            Boolean testC = cc.LoginContaCorrente(int.Parse(txtNumero.Text), int.Parse(txtSenha.Text));
+            Boolean testC = cc.LoginContaCorrente(int.Parse(txtNumero.Text), int.Parse(txtSenha.Password));
 
                 if (testC)
                 {
                     LoginCliente menuCliente = new LoginCliente();
                     menuCliente.contaLogada = int.Parse(txtNumero.Text);
                     menuCliente.tipoConta = 1;
+                    menuCliente.lblCliente.Content = cc.NomeClienteConta(int.Parse(txtNumero.Text));
                     menuCliente.Show();
                     Close();
                 }
                 else
                 {
                     ContaPController cp = new ContaPController();
-                    Boolean testP = cp.LoginContaPoupanca(int.Parse(txtNumero.Text), int.Parse(txtSenha.Text));
+                    Boolean testP = cp.LoginContaPoupanca(int.Parse(txtNumero.Text), int.Parse(txtSenha.Password));
                     if (testP)
                     {
                         LoginCliente menuCliente = new LoginCliente();
                         menuCliente.contaLogada = int.Parse(txtNumero.Text);
                         menuCliente.tipoConta = 2;
+                        menuCliente.lblCliente.Content = cp.NomeClienteConta(int.Parse(txtNumero.Text));
                         menuCliente.Show();
                         Close();
 

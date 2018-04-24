@@ -76,6 +76,14 @@ namespace TelaInicial
 
                 }
             }
+            
+            
+        }
+
+        private void btnSair_Click(object sender, RoutedEventArgs e)
+        {
+     
+            Close();
         }
     }
 }

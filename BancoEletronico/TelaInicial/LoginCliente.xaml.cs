@@ -23,11 +23,12 @@ namespace TelaInicial
     {
         public int contaLogada;
         public int tipoConta;
+        public string nomeCliente;
 
         public LoginCliente()
         {
             InitializeComponent();
-
+            
 
         }
 
@@ -46,6 +47,7 @@ namespace TelaInicial
             sacar.conta = contaLogada;
             sacar.tipoConta = tipoConta;
             sacar.Show();
+            lblCliente.Content = nomeCliente;
         }
 
         private void btnDepositar_Click(object sender, RoutedEventArgs e)
@@ -56,26 +58,7 @@ namespace TelaInicial
             depositar.Show();
         }
 
-       
 
-        private void lblCliente_Initialized(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            if (tipoConta == 1)
-            {
-                ContaCController cc = new ContaCController();
-                lblCliente.Content = cc.NomeClienteConta(contaLogada);
-            }
-            else
-            {
-                ContaPController cp = new ContaPController();
-                lblCliente.Content = cp.NomeClienteConta(contaLogada);
-            }
-        }
 
         private void btnExtrato_Click(object sender, RoutedEventArgs e)
         {
@@ -84,6 +67,8 @@ namespace TelaInicial
             ex.tipoConta = tipoConta;
             ex.Show();
         }
+
+        
 
 
 
