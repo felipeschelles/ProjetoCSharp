@@ -11,11 +11,16 @@
             <ImageBrush ImageSource="C:\Users\Felipe\Source\Repos\ProjetoCSharp\BancoEletronico\TelaInicial\TestBack1.png"/>
         </Grid.Background>
         <Label x:Name="lblExcluirConta" Content="Excluir Conta" HorizontalAlignment="Left" Margin="39,10,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lvlExcluirConta" Content="Id da Conta:" HorizontalAlignment="Left" Margin="39,58,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtExcluirConta" HorizontalAlignment="Left" Height="23" Margin="130,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btnExcluir" Content="Excluir" HorizontalAlignment="Left" Margin="632,418,0,0" VerticalAlignment="Top" Width="75" IsEnabled="False"/>
+        <Label x:Name="lvlExcluirConta" Content="Id da Conta:" HorizontalAlignment="Left" Margin="39,129,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtExcluirConta" HorizontalAlignment="Left" Height="23" Margin="130,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnExcluir" Content="Excluir" HorizontalAlignment="Left" Margin="632,418,0,0" VerticalAlignment="Top" Width="75" IsEnabled="False" Click="btnExcluir_Click"/>
         <Button x:Name="btnVoltarExContas" Content="Voltar" HorizontalAlignment="Left" Margin="733,418,0,0" VerticalAlignment="Top" Width="75" Click="btnVoltarExContas_Click"/>
-        <Button x:Name="btnVerificarConta" Content="Verificar" HorizontalAlignment="Left" Margin="276,61,0,0" VerticalAlignment="Top" Width="75" Click="btnVerificarConta_Click"/>
+        <Button x:Name="btnVerificarConta" Content="Verificar" HorizontalAlignment="Left" Margin="276,132,0,0" VerticalAlignment="Top" Width="75" Click="btnVerificarConta_Click"/>
+        <ComboBox x:Name="cboxConta"  HorizontalAlignment="Left" Margin="131,72,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cboxConta_SelectionChanged">
+            <ComboBoxItem x:Name="contaC" Content="Conta Corrente" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem x:Name="contaP" Content="Conta Poupanca" HorizontalAlignment="Left" Width="118"/>
+        </ComboBox>
+                <Label Content="Tipo de Conta:" HorizontalAlignment="Left" Margin="39,68,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

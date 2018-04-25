@@ -20,6 +20,7 @@ namespace TelaInicial
     /// </summary>
     public partial class ExcluirConta : Window
     {
+        public int conta=0;
         public ExcluirConta()
         {
             InitializeComponent();
@@ -34,18 +35,73 @@ namespace TelaInicial
 
         private void btnVerificarConta_Click(object sender, RoutedEventArgs e)
         {
-            ContaCController co = new ContaCController();
-            if (co.PesquisarContaPorID(int.Parse(txtExcluirConta.Text)) != null)
+            if (conta == 1)
             {
+                ContaCController co = new ContaCController();
+                if (co.PesquisarContaPorID(int.Parse(txtExcluirConta.Text)) != null)
+                {
 
-                MessageBox.Show("Conta encontrada.");
-                btnExcluir.IsEnabled = true;
+                    MessageBox.Show("Conta encontrada.");
+                    btnExcluir.IsEnabled = true;
+                }
+                else
+                {
+                    MessageBox.Show("Conta não encontrada.");
+                    btnExcluir.IsEnabled = false;
+                }
             }
             else
             {
-                MessageBox.Show("Conta não encontrada.");
-                btnExcluir.IsEnabled = false;
+                ContaPController cp = new ContaPController();
+                if (cp.PesquisarContaPorID(int.Parse(txtExcluirConta.Text)) != null)
+                {
+
+                    MessageBox.Show("Conta encontrada.");
+                    btnExcluir.IsEnabled = true;
+                }
+                else
+                {
+                    MessageBox.Show("Conta não encontrada.");
+                    btnExcluir.IsEnabled = false;
+                }
             }
+            
+        
+        }
+
+
+        private void cboxConta_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cboxConta.SelectedIndex == 0)
+            {
+                conta = 1;
+            }
+            else
+            {
+                if (cboxConta.SelectedIndex == 1)
+                {
+                    conta = 2;
+                }
+
+            }
+        }
+
+        private void btnExcluir_Click(object sender, RoutedEventArgs e)
+        {
+            if (conta == 1) {
+                ContaCController co = new ContaCController();
+                co.ExcluirConta(int.Parse(txtExcluirConta.Text));
+                btnExcluir.IsEnabled = false;
+                MessageBox.Show("Conta excluida com sucesso.");
+
+            }
+            else {
+                ContaPController cp = new ContaPController();
+                cp.ExcluirConta(int.Parse(txtExcluirConta.Text));
+                btnExcluir.IsEnabled = false;
+                MessageBox.Show("Conta excluida com sucesso.");
+            }
+            
         }
     }
 }
