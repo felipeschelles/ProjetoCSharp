@@ -40,18 +40,25 @@ namespace TelaInicial
                 MessageBox.Show("Campo Obrigatorio!!");
             }
             else {
+                ClienteController cc = new ClienteController();
                 Cliente c = new Cliente();
                 c.Nome = txtNome.Text;
                 c.DtAniver = txtDtNascimento.Text;
                 c.Cpf = txtCPF.Text;
-
+                Boolean verifica = cc.VerificaCPF(txtCPF.Text);
                 Endereco end = cadastrarEndereco();
 
                 c.EnderecoID = end.EnderecoID;
 
-                ClienteController cc = new ClienteController();
-                cc.SalvarCliente(c);
-                MessageBox.Show("Cliente cadastrado com sucesso.");
+                if (verifica)
+                {
+                    cc.SalvarCliente(c);
+                    MessageBox.Show("Cliente cadastrado com sucesso.");
+                }
+                else
+                {
+                    MessageBox.Show("CPF ja cadastrado.");
+                }
             }
         }
 

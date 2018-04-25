@@ -1,5 +1,6 @@
 ﻿using Models;
 using Models.DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -50,6 +51,22 @@ namespace Controllers
         public List<Cliente> ListarClientes()
         {
             return ContextoSingleton.Instancia.Clientes.ToList();
+        }
+
+        public Boolean VerificaCPF (string CPF)
+        {
+            Cliente c = (from x in ContextoSingleton.Instancia.Clientes
+                         where x.Cpf == CPF
+                         select x).FirstOrDefault();
+
+            if(c != null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
 
         public void EditarCliente(int idClienteEditar, Cliente clienteEditado)
